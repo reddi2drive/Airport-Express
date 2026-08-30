@@ -4368,52 +4368,76 @@ body.cashline-theme {
 
 /* =========================================================
    HOPE'S PEAK MOUNTAIN
-   GREY + PINK THEME
+   GREY + PINK MOUNTAIN THEME
 ========================================================= */
 
 body.hopes-theme {
 
-  --hopes-grey:
-    #6f7279;
-
   --hopes-dark:
-    #3f4147;
+    #303238;
 
-  --hopes-deep:
-    #292b30;
+  --hopes-rock:
+    #4b4e55;
+
+  --hopes-rock-light:
+    #666a72;
+
+  --hopes-grey:
+    #d7d7dc;
 
   --hopes-pink:
-    #ed6e9d;
+    #eb79a5;
 
   --hopes-pink-dark:
-    #c74778;
+    #c94878;
 
-  --hopes-light:
-    #f4f2f4;
+  --hopes-snow:
+    #f7f7f8;
+
+
+  /* =====================================================
+     MOUNTAIN BACKGROUND IMAGE
+
+     LATER CHANGE:
+
+     none
+
+     TO SOMETHING LIKE:
+
+     url("images/hopes-peak-background.jpg")
+
+     OR:
+
+     url("PASTE-YOUR-IMAGE-LINK-HERE")
+  ====================================================== */
+
+  --hopes-bg-image:
+    none;
 
 
   background:
 
     radial-gradient(
       circle at 15% 5%,
-      rgba(237,110,157,.16),
+      rgba(235,121,165,.15),
       transparent 30%
     ),
 
     linear-gradient(
       180deg,
-      #f4f3f5,
-      #e7e5e9
+      #f5f3f5,
+      #e8e6e9
     );
 
 }
 
 
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
 
-.hopes-theme .board-back,
-.hopes-theme .eyebrow.dark {
+.hopes-theme .board-back {
 
   color:
     var(--hopes-pink-dark);
@@ -4422,103 +4446,253 @@ body.hopes-theme {
 
 
 
-/* MAIN BOARD */
+/* =========================================================
+   ROCKY BOARD FRAME
+========================================================= */
 
 .hopes-theme .island-board {
+
+  padding:
+    14px;
+
+  gap:
+    9px;
+
+  border:
+    7px solid
+    #292b30;
+
+  border-radius:
+    30px;
+
+  background:
+
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(255,255,255,.08),
+      transparent 18%
+    ),
+
+    radial-gradient(
+      circle at 80% 25%,
+      rgba(255,255,255,.05),
+      transparent 20%
+    ),
+
+    repeating-linear-gradient(
+      135deg,
+      #50535a 0px,
+      #50535a 18px,
+      #44474e 18px,
+      #44474e 34px,
+      #585b63 34px,
+      #585b63 48px
+    );
+
+  box-shadow:
+
+    inset
+    0 0 0 3px
+    rgba(255,255,255,.05),
+
+    0 24px 55px
+    rgba(35,36,41,.32);
+
+}
+
+
+
+/* =========================================================
+   BOARD SPACES
+========================================================= */
+
+.hopes-theme .board-space {
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  border:
+    2px solid
+    rgba(49,51,57,.28);
+
+  border-radius:
+    16px;
 
   background:
     linear-gradient(
       145deg,
-      #555860,
-      #383a40
+      #f3e6eb,
+      #efd5df
     );
 
-  border:
-    6px solid
-    #303238;
+  color:
+    #393a40;
 
   box-shadow:
-    0 24px 55px
-    rgba(45,46,52,.28);
+
+    inset
+    0 3px 0
+    rgba(255,255,255,.55),
+
+    0 4px 8px
+    rgba(30,31,35,.18);
 
 }
 
 
 
-/* STANDARD BOARD SQUARES */
-
-.hopes-theme .board-space {
-
-  background:
-    #eceaed;
-
-  color:
-    #3b3d43;
-
-  border:
-    2px solid
-    rgba(64,66,72,.22);
-
-}
-
-
-/* ALTERNATING */
+/* ALTERNATING GREY SPACES */
 
 .hopes-theme
-.board-space:nth-child(odd) {
+.board-space:nth-child(even) {
 
   background:
-    #f5dce6;
+    linear-gradient(
+      145deg,
+      #eeeeef,
+      #d2d2d7
+    );
 
 }
 
 
 
-/* START */
+/* =========================================================
+   SNOW CAP ON BOARD SPACES
+========================================================= */
+
+.hopes-theme .board-space::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  z-index:
+    1;
+
+  top:
+    -4px;
+
+  left:
+    -3%;
+
+  width:
+    106%;
+
+  height:
+    11px;
+
+  pointer-events:
+    none;
+
+  background:
+
+    radial-gradient(
+      ellipse at 10% 100%,
+      white 0 45%,
+      transparent 48%
+    ),
+
+    radial-gradient(
+      ellipse at 30% 100%,
+      #fafafa 0 47%,
+      transparent 50%
+    ),
+
+    radial-gradient(
+      ellipse at 52% 100%,
+      white 0 46%,
+      transparent 49%
+    ),
+
+    radial-gradient(
+      ellipse at 75% 100%,
+      #fafafa 0 47%,
+      transparent 50%
+    ),
+
+    radial-gradient(
+      ellipse at 94% 100%,
+      white 0 45%,
+      transparent 49%
+    );
+
+}
+
+
+
+/* KEEP TEXT/ICONS ABOVE SNOW */
+
+.hopes-theme .space-number,
+.hopes-theme .space-icon,
+.hopes-theme .space-label {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+}
+
+
+
+/* =========================================================
+   START
+========================================================= */
 
 .hopes-theme .space-start {
 
   background:
     linear-gradient(
       145deg,
-      #ef88ae,
-      #cc4d7c
+      #f5c8d9,
+      #e996b6
     );
 
   color:
-    white;
+    #412c34;
 
 }
 
 
 
-/* GOOD */
+/* =========================================================
+   GOOD
+========================================================= */
 
 .hopes-theme .space-good {
 
   background:
     linear-gradient(
       145deg,
-      #f6a3c1,
-      #df7099
+      #f293b6,
+      #dd6995
     );
 
   color:
-    #4c2634;
+    #40242e;
 
 }
 
 
 
-/* BAD */
+/* =========================================================
+   BAD
+========================================================= */
 
 .hopes-theme .space-bad {
 
   background:
     linear-gradient(
       145deg,
-      #555860,
-      #292b30
+      #64676f,
+      #3d4046
     );
 
   color:
@@ -4528,70 +4702,89 @@ body.hopes-theme {
 
 
 
-/* EVENTS */
+/* =========================================================
+   EVENTS
+========================================================= */
 
 .hopes-theme .space-event {
 
   background:
-    #dddde1;
+    linear-gradient(
+      145deg,
+      #eeeeef,
+      #d3d3d8
+    );
 
   color:
-    #3c3e44;
+    #37393e;
 
 }
 
 
 
-/* TRAVEL */
+/* =========================================================
+   TRAVEL
+========================================================= */
 
 .hopes-theme .space-travel {
 
   background:
     linear-gradient(
       145deg,
-      #ee92b4,
-      #c9527e
+      #f5c0d3,
+      #df83a6
     );
 
   color:
-    white;
+    #462a34;
 
 }
 
 
 
-/* PROPERTIES */
+/* =========================================================
+   PROPERTIES
+========================================================= */
 
 .hopes-theme
 .board-space.space-property {
 
   background:
+
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,.25),
+      transparent 42%
+    ),
+
     linear-gradient(
       145deg,
-      #f8c3d6,
-      #e687aa
+      #f39cbd,
+      #dc6894
     ) !important;
 
   color:
-    #442833 !important;
+    #42242f !important;
 
   border:
-    2px solid
-    #b64d75 !important;
+    3px solid
+    #b94571 !important;
 
 }
 
 
 
-/* FINISH */
+/* =========================================================
+   FINISH
+========================================================= */
 
 .hopes-theme .space-finish {
 
   background:
     linear-gradient(
       145deg,
-      #f39abb,
-      #d04c7d
+      #eb77a3,
+      #c63f72
     );
 
   color:
@@ -4599,82 +4792,335 @@ body.hopes-theme {
 
   border:
     3px solid
-    #4b4d53;
+    #33353a;
 
 }
 
 
 
-/* CENTRE */
+/* =========================================================
+   MOUNTAIN CENTRE
+========================================================= */
 
 .hopes-theme .board-centre {
 
-  background:
+  position:
+    relative;
 
-    radial-gradient(
-      circle at top,
-      rgba(255,255,255,.16),
-      transparent 36%
-    ),
+  overflow:
+    hidden;
 
-    linear-gradient(
-      145deg,
-      #74777e,
-      #4b4d53 52%,
-      #303238
-    );
+  isolation:
+    isolate;
+
+  padding:
+    30px;
 
   border:
-    4px solid
-    rgba(255,255,255,.14);
+    5px solid
+    rgba(255,255,255,.11);
+
+  border-radius:
+    24px;
+
+
+  /*
+     IMAGE GOES HERE AUTOMATICALLY
+     VIA --hopes-bg-image ABOVE
+  */
+
+  background-image:
+
+    linear-gradient(
+      180deg,
+      rgba(26,28,33,.08) 0%,
+      rgba(31,33,38,.22) 40%,
+      rgba(25,27,31,.78) 100%
+    ),
+
+    var(--hopes-bg-image);
+
+
+  background-size:
+
+    cover,
+    cover;
+
+
+  background-position:
+
+    center,
+    center;
+
+
+  background-repeat:
+
+    no-repeat,
+    no-repeat;
+
+
+  background-color:
+    #43464d;
+
+
+  box-shadow:
+
+    inset
+    0 0 60px
+    rgba(0,0,0,.28),
+
+    0 4px 12px
+    rgba(0,0,0,.25);
 
 }
 
 
 
-/* CURRENT SPACE */
+/* =========================================================
+   FALLBACK MOUNTAIN EFFECT
+   Visible until we add the real image
+========================================================= */
+
+.hopes-theme
+.board-centre::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  z-index:
+    -1;
+
+  left:
+    -5%;
+
+  right:
+    -5%;
+
+  top:
+    10%;
+
+  height:
+    55%;
+
+  opacity:
+    .45;
+
+  clip-path:
+
+    polygon(
+      0% 100%,
+      14% 76%,
+      24% 84%,
+      37% 48%,
+      45% 67%,
+      55% 23%,
+      65% 58%,
+      73% 39%,
+      82% 70%,
+      91% 51%,
+      100% 100%
+    );
+
+  background:
+    linear-gradient(
+      125deg,
+      #d8dbe0,
+      #777b83 40%,
+      #393c42 72%,
+      #25272b
+    );
+
+}
+
+
+
+/* =========================================================
+   PINE TREES
+========================================================= */
+
+.hopes-theme
+.board-centre::after {
+
+  content:
+    "🌲   🌲      🌲   🌲";
+
+  position:
+    absolute;
+
+  z-index:
+    -1;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  bottom:
+    4%;
+
+  text-align:
+    center;
+
+  white-space:
+    nowrap;
+
+  font-size:
+    clamp(
+      20px,
+      3vw,
+      34px
+    );
+
+  opacity:
+    .45;
+
+  filter:
+    grayscale(.35)
+    brightness(.72);
+
+}
+
+
+
+/* =========================================================
+   CENTRE CONTENT
+========================================================= */
+
+.hopes-theme
+.board-centre > * {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+}
+
+
+.hopes-theme .centre-icon {
+
+  font-size:
+    clamp(
+      75px,
+      10vw,
+      125px
+    );
+
+  line-height:
+    1;
+
+  filter:
+    drop-shadow(
+      0 8px 8px
+      rgba(0,0,0,.32)
+    );
+
+}
+
+
+.hopes-theme .centre-small {
+
+  color:
+    rgba(255,255,255,.82);
+
+}
+
+
+.hopes-theme .board-centre h2 {
+
+  color:
+    white;
+
+  text-shadow:
+    0 3px 10px
+    rgba(0,0,0,.45);
+
+}
+
+
+.hopes-theme .board-centre p {
+
+  color:
+    rgba(255,255,255,.88);
+
+  text-shadow:
+    0 2px 7px
+    rgba(0,0,0,.42);
+
+}
+
+
+
+/* =========================================================
+   CURRENT SPACE
+========================================================= */
 
 .hopes-theme .current-space {
 
   outline:
     5px solid
-    #ff83b2;
+    #ff72a8;
 
   outline-offset:
     -5px;
+
+  box-shadow:
+
+    inset
+    0 0 0 2px
+    rgba(255,255,255,.35),
+
+    0 0 18px
+    rgba(235,91,146,.48);
 
 }
 
 
 
-/* PLAYER MARKER */
+/* =========================================================
+   PLAYER MARKER
+========================================================= */
 
 .hopes-theme .player-marker {
 
   border:
     4px solid
-    var(--hopes-pink);
+    var(--hopes-pink-dark);
 
   background:
     white;
 
   box-shadow:
-    0 5px 18px
-    rgba(70,55,65,.30);
+    0 6px 18px
+    rgba(35,36,40,.42);
 
 }
 
 
 
-/* DICE PANEL */
+/* =========================================================
+   DICE PANEL
+========================================================= */
 
 .hopes-theme .dice-panel {
 
   border:
     3px solid
-    rgba(199,71,120,.15);
+    rgba(201,72,120,.14);
 
   background:
+
+    radial-gradient(
+      circle at top,
+      rgba(235,121,165,.07),
+      transparent 42%
+    ),
+
     linear-gradient(
       180deg,
       #ffffff,
@@ -4682,8 +5128,8 @@ body.hopes-theme {
     );
 
   box-shadow:
-    0 18px 45px
-    rgba(55,55,61,.15);
+    0 20px 45px
+    rgba(55,55,61,.16);
 
 }
 
@@ -4691,7 +5137,7 @@ body.hopes-theme {
 .hopes-theme .dice-panel h2 {
 
   color:
-    #474950;
+    #44464c;
 
 }
 
@@ -4699,48 +5145,56 @@ body.hopes-theme {
 .hopes-theme .dice-face {
 
   color:
-    #55575d;
+    #51545a;
 
 }
 
 
 
-/* WALLET */
+/* =========================================================
+   WALLET
+========================================================= */
 
 .hopes-theme .player-wallet {
 
   background:
-    #f4dfe7;
+    linear-gradient(
+      145deg,
+      #f7e7ed,
+      #efd5df
+    );
 
   color:
-    #743149;
+    #713047;
 
   border:
     1px solid
-    rgba(199,71,120,.17);
+    rgba(199,71,120,.18);
 
 }
 
 
 
-/* ROLL DICE */
+/* =========================================================
+   ROLL DICE BUTTON
+========================================================= */
 
 .hopes-theme .roll-dice {
 
   background:
     linear-gradient(
       135deg,
-      #ef85ac,
-      #cf527f 55%,
-      #aa365f
+      #ef83ac,
+      #d04d7e 55%,
+      #aa345f
     );
 
   color:
     white;
 
   box-shadow:
-    0 10px 22px
-    rgba(183,62,107,.27);
+    0 10px 24px
+    rgba(183,62,107,.30);
 
 }
 
@@ -4750,16 +5204,18 @@ body.hopes-theme {
   background:
     linear-gradient(
       135deg,
-      #f594b8,
-      #da608c 55%,
-      #b53e67
+      #f296b8,
+      #dd608d 55%,
+      #b53e68
     );
 
 }
 
 
 
-/* POSITION */
+/* =========================================================
+   POSITION TEXT
+========================================================= */
 
 .hopes-theme .position-text {
 
@@ -4770,15 +5226,21 @@ body.hopes-theme {
 
 
 
-/* MESSAGE */
+/* =========================================================
+   MESSAGE
+========================================================= */
 
 .hopes-theme .board-message {
 
   background:
-    #f5e5eb;
+    linear-gradient(
+      145deg,
+      #f7e9ee,
+      #efdce4
+    );
 
   color:
-    #623344;
+    #603142;
 
   border:
     1px solid
@@ -4788,15 +5250,18 @@ body.hopes-theme {
 
 
 
-/* BUY PROPERTY */
+/* =========================================================
+   BUY PROPERTY
+========================================================= */
 
-.hopes-theme .property-buy-button {
+.hopes-theme
+.property-buy-button {
 
   background:
     linear-gradient(
       135deg,
       #ee91b3,
-      #cb557f
+      #c94d7b
     );
 
   color:
@@ -4806,22 +5271,53 @@ body.hopes-theme {
 
 
 
-/* RETURN TO AIRPORT */
+/* =========================================================
+   RETURN TO AIRPORT
+========================================================= */
 
 .hopes-theme .board-return {
 
   background:
     linear-gradient(
       135deg,
-      #666970,
-      #44464c
+      #696c73,
+      #3d3f45
     );
 
   color:
     white;
 
-  box-shadow:
-    0 8px 20px
-    rgba(50,50,55,.20);
+}
+
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media
+(max-width: 600px) {
+
+  .hopes-theme .island-board {
+
+    padding:
+      7px;
+
+    gap:
+      4px;
+
+    border-width:
+      4px;
+
+  }
+
+
+  .hopes-theme
+  .board-space::after {
+
+    height:
+      7px;
+
+  }
 
 }
