@@ -4365,3 +4365,463 @@ body.cashline-theme {
   }
 
 }
+
+/* =========================================================
+   HOPE'S PEAK MOUNTAIN
+   GREY + PINK THEME
+========================================================= */
+
+body.hopes-theme {
+
+  --hopes-grey:
+    #6f7279;
+
+  --hopes-dark:
+    #3f4147;
+
+  --hopes-deep:
+    #292b30;
+
+  --hopes-pink:
+    #ed6e9d;
+
+  --hopes-pink-dark:
+    #c74778;
+
+  --hopes-light:
+    #f4f2f4;
+
+
+  background:
+
+    radial-gradient(
+      circle at 15% 5%,
+      rgba(237,110,157,.16),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      180deg,
+      #f4f3f5,
+      #e7e5e9
+    );
+
+}
+
+
+
+/* HEADER */
+
+.hopes-theme .board-back,
+.hopes-theme .eyebrow.dark {
+
+  color:
+    var(--hopes-pink-dark);
+
+}
+
+
+
+/* MAIN BOARD */
+
+.hopes-theme .island-board {
+
+  background:
+    linear-gradient(
+      145deg,
+      #555860,
+      #383a40
+    );
+
+  border:
+    6px solid
+    #303238;
+
+  box-shadow:
+    0 24px 55px
+    rgba(45,46,52,.28);
+
+}
+
+
+
+/* STANDARD BOARD SQUARES */
+
+.hopes-theme .board-space {
+
+  background:
+    #eceaed;
+
+  color:
+    #3b3d43;
+
+  border:
+    2px solid
+    rgba(64,66,72,.22);
+
+}
+
+
+/* ALTERNATING */
+
+.hopes-theme
+.board-space:nth-child(odd) {
+
+  background:
+    #f5dce6;
+
+}
+
+
+
+/* START */
+
+.hopes-theme .space-start {
+
+  background:
+    linear-gradient(
+      145deg,
+      #ef88ae,
+      #cc4d7c
+    );
+
+  color:
+    white;
+
+}
+
+
+
+/* GOOD */
+
+.hopes-theme .space-good {
+
+  background:
+    linear-gradient(
+      145deg,
+      #f6a3c1,
+      #df7099
+    );
+
+  color:
+    #4c2634;
+
+}
+
+
+
+/* BAD */
+
+.hopes-theme .space-bad {
+
+  background:
+    linear-gradient(
+      145deg,
+      #555860,
+      #292b30
+    );
+
+  color:
+    white;
+
+}
+
+
+
+/* EVENTS */
+
+.hopes-theme .space-event {
+
+  background:
+    #dddde1;
+
+  color:
+    #3c3e44;
+
+}
+
+
+
+/* TRAVEL */
+
+.hopes-theme .space-travel {
+
+  background:
+    linear-gradient(
+      145deg,
+      #ee92b4,
+      #c9527e
+    );
+
+  color:
+    white;
+
+}
+
+
+
+/* PROPERTIES */
+
+.hopes-theme
+.board-space.space-property {
+
+  background:
+    linear-gradient(
+      145deg,
+      #f8c3d6,
+      #e687aa
+    ) !important;
+
+  color:
+    #442833 !important;
+
+  border:
+    2px solid
+    #b64d75 !important;
+
+}
+
+
+
+/* FINISH */
+
+.hopes-theme .space-finish {
+
+  background:
+    linear-gradient(
+      145deg,
+      #f39abb,
+      #d04c7d
+    );
+
+  color:
+    white;
+
+  border:
+    3px solid
+    #4b4d53;
+
+}
+
+
+
+/* CENTRE */
+
+.hopes-theme .board-centre {
+
+  background:
+
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,.16),
+      transparent 36%
+    ),
+
+    linear-gradient(
+      145deg,
+      #74777e,
+      #4b4d53 52%,
+      #303238
+    );
+
+  border:
+    4px solid
+    rgba(255,255,255,.14);
+
+}
+
+
+
+/* CURRENT SPACE */
+
+.hopes-theme .current-space {
+
+  outline:
+    5px solid
+    #ff83b2;
+
+  outline-offset:
+    -5px;
+
+}
+
+
+
+/* PLAYER MARKER */
+
+.hopes-theme .player-marker {
+
+  border:
+    4px solid
+    var(--hopes-pink);
+
+  background:
+    white;
+
+  box-shadow:
+    0 5px 18px
+    rgba(70,55,65,.30);
+
+}
+
+
+
+/* DICE PANEL */
+
+.hopes-theme .dice-panel {
+
+  border:
+    3px solid
+    rgba(199,71,120,.15);
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f4f1f3
+    );
+
+  box-shadow:
+    0 18px 45px
+    rgba(55,55,61,.15);
+
+}
+
+
+.hopes-theme .dice-panel h2 {
+
+  color:
+    #474950;
+
+}
+
+
+.hopes-theme .dice-face {
+
+  color:
+    #55575d;
+
+}
+
+
+
+/* WALLET */
+
+.hopes-theme .player-wallet {
+
+  background:
+    #f4dfe7;
+
+  color:
+    #743149;
+
+  border:
+    1px solid
+    rgba(199,71,120,.17);
+
+}
+
+
+
+/* ROLL DICE */
+
+.hopes-theme .roll-dice {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ef85ac,
+      #cf527f 55%,
+      #aa365f
+    );
+
+  color:
+    white;
+
+  box-shadow:
+    0 10px 22px
+    rgba(183,62,107,.27);
+
+}
+
+
+.hopes-theme .roll-dice:hover {
+
+  background:
+    linear-gradient(
+      135deg,
+      #f594b8,
+      #da608c 55%,
+      #b53e67
+    );
+
+}
+
+
+
+/* POSITION */
+
+.hopes-theme .position-text {
+
+  color:
+    #77737a;
+
+}
+
+
+
+/* MESSAGE */
+
+.hopes-theme .board-message {
+
+  background:
+    #f5e5eb;
+
+  color:
+    #623344;
+
+  border:
+    1px solid
+    rgba(199,71,120,.16);
+
+}
+
+
+
+/* BUY PROPERTY */
+
+.hopes-theme .property-buy-button {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ee91b3,
+      #cb557f
+    );
+
+  color:
+    white;
+
+}
+
+
+
+/* RETURN TO AIRPORT */
+
+.hopes-theme .board-return {
+
+  background:
+    linear-gradient(
+      135deg,
+      #666970,
+      #44464c
+    );
+
+  color:
+    white;
+
+  box-shadow:
+    0 8px 20px
+    rgba(50,50,55,.20);
+
+}
