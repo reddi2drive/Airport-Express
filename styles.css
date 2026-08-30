@@ -2905,3 +2905,138 @@ body.cashline-theme {
     1px solid
     rgba(190,30,42,.18);
 }
+/* =========================================================
+   AIRPORT EXPRESS
+   PLAYER MONEY + PROPERTIES
+========================================================= */
+
+.player-wallet {
+
+  margin:
+    14px 0 5px;
+
+  padding:
+    12px 15px;
+
+  border-radius:
+    14px;
+
+  background:
+    #f4f7f9;
+
+  font-size:
+    18px;
+
+  font-weight:
+    900;
+
+  color:
+    #17324d;
+
+}
+
+
+.property-buy-button {
+
+  width:
+    100%;
+
+  margin-top:
+    12px;
+
+  padding:
+    14px;
+
+  border:
+    none;
+
+  border-radius:
+    15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd55a,
+      #efad1c
+    );
+
+  color:
+    #5e4005;
+
+  font-weight:
+    900;
+
+  cursor:
+    pointer;
+
+}
+
+
+.property-buy-button:disabled {
+
+  opacity:
+    .45;
+
+  cursor:
+    not-allowed;
+
+}
+
+
+.property-owned {
+
+  margin-top:
+    10px;
+
+  padding-top:
+    10px;
+
+  border-top:
+    1px solid
+    rgba(0,0,0,.08);
+
+  font-size:
+    13px;
+
+}
+
+
+/* =========================================================
+   CASHLINE CITY PROPERTY SPACES
+========================================================= */
+
+.cashline-theme
+.board-space.space-property {
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #fff3c9,
+      #ffd86a
+    ) !important;
+
+  color:
+    #65151c !important;
+
+  border:
+    2px solid
+    #c99522 !important;
+
+}
+
+
+.cashline-theme
+.player-wallet {
+
+  background:
+    #ffe8ea;
+
+  color:
+    #8d151f;
+
+  border:
+    1px solid
+    rgba(190,30,42,.15);
+
+}
