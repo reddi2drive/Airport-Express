@@ -1,209 +1,138 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
-  <title>
-    Cashline City | Airport Express
-  </title>
+<title>
+Cashline City | Airport Express
+</title>
 
-  <link
-    rel="stylesheet"
-    href="../styles.css"
-  >
+<link
+  rel="stylesheet"
+  href="../styles.css"
+>
 
 </head>
 
 
-<body class="island-page">
+<body class="board-page">
 
 
-<section class="island-hero cashline">
+<main class="board-shell">
 
-  <div class="island-inner">
 
-    <a
-      href="../index.html"
-      class="back-airport"
-    >
-      ← Airport Express
-    </a>
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
+<header class="board-header">
 
-    <div class="eyebrow">
-      DESTINATION
-    </div>
 
+<a
+  href="../index.html"
+  class="board-back"
+>
+← Airport Express
+</a>
 
-    <h1>
-      Cashline City
-    </h1>
 
+<div class="eyebrow dark">
+DESTINATION
+</div>
 
-    <p>
-      Welcome to the busiest city on the
-      Airport Express map. Complete the city
-      challenges to earn the Cashline City
-      passport stamp.
-    </p>
 
-  </div>
+<h1>
+🏙️ Cashline City
+</h1>
 
-</section>
 
+<p>
+Roll the dice and travel around Cashline City.
+Reach the final passport office to complete the city.
+</p>
 
 
-<main class="island-main">
+</header>
 
 
-<div class="mission-layout">
 
+<!-- =====================================================
+     GAME
+====================================================== -->
 
-  <section class="game-card">
+<div class="board-game-layout">
 
-    <h2>
-      City Challenges
-    </h2>
 
-    <p>
-      Complete all three challenges.
-    </p>
+<!-- BOARD -->
 
+<div
+  class="island-board"
+  id="islandBoard"
+></div>
 
-    <div class="task-list">
 
 
-      <div class="task">
+<!-- DICE -->
 
-        <div class="task-number">
-          1
-        </div>
+<aside class="dice-panel">
 
-        <div class="task-text">
 
-          <strong>
-            Shopping Spree
-          </strong>
+<h2>
+Your Turn
+</h2>
 
-          <span>
-            Spend $50 in Cashline City.
-          </span>
 
-        </div>
+<div
+  class="dice-face"
+  id="diceFace"
+>
+⚀
+</div>
 
-        <button>
-          Complete
-        </button>
 
-      </div>
+<button
+  type="button"
+  class="roll-dice"
+  id="rollDice"
+>
+🎲 Roll Dice
+</button>
 
 
+<div
+  class="position-text"
+  id="positionText"
+>
+Space 1 of 24
+</div>
 
-      <div class="task">
 
-        <div class="task-number">
-          2
-        </div>
+<div
+  class="board-message"
+  id="boardMessage"
+>
+Roll the dice to begin your Cashline City adventure.
+</div>
 
-        <div class="task-text">
 
-          <strong>
-            Find the Coin Pouch
-          </strong>
-
-          <span>
-            Discover the hidden pouch and collect $50.
-          </span>
-
-        </div>
-
-        <button>
-          Complete
-        </button>
-
-      </div>
-
-
-
-      <div class="task">
-
-        <div class="task-number">
-          3
-        </div>
-
-        <div class="task-text">
-
-          <strong>
-            City Festival
-          </strong>
-
-          <span>
-            Reach the festival before leaving the city.
-          </span>
-
-        </div>
-
-        <button>
-          Complete
-        </button>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-
-  <aside class="game-card">
-
-    <div class="big-stamp">
-      🏙️
-    </div>
-
-    <h3 class="stamp-card-title">
-      Cashline City
-    </h3>
-
-    <p class="stamp-card-copy">
-      Complete every challenge to
-      unlock your passport stamp.
-    </p>
-
-
-    <button
-      class="claim-button"
-      id="claimStamp"
-      disabled
-    >
-      Collect Passport Stamp
-    </button>
-
-
-    <div
-      class="status-message"
-      id="stampMessage"
-    >
-      Complete all three challenges.
-    </div>
-
-
-    <a
-      href="../index.html"
-      class="return-button"
-    >
-      ✈ Return to Airport
-    </a>
-
-  </aside>
+<a
+  href="../index.html"
+  class="board-return"
+  id="returnAirport"
+>
+✈ Return to Airport
+</a>
+
+
+</aside>
 
 
 </div>
@@ -212,16 +141,503 @@
 </main>
 
 
+
 <script src="../game.js"></script>
+
 
 <script>
 
-  loadDestination(
-    "cashline"
-  );
+/* =====================================================
+   CASHLINE CITY BOARD
+====================================================== */
+
+loadIslandBoard({
+
+  id:
+    "cashline",
+
+  name:
+    "Cashline City",
+
+  icon:
+    "🏙️",
+
+  marker:
+    "🧳",
+
+
+  spaces: [
+
+
+    /* 1 */
+
+    {
+
+      label:
+        "Arrival",
+
+      icon:
+        "✈️",
+
+      type:
+        "start",
+
+      message:
+        "Welcome to Cashline City!"
+
+    },
+
+
+    /* 2 */
+
+    {
+
+      label:
+        "Go Shopping -$50",
+
+      icon:
+        "🛍️",
+
+      type:
+        "bad",
+
+      message:
+        "A shopping spree has emptied your wallet."
+
+    },
+
+
+    /* 3 */
+
+    {
+
+      label:
+        "City Festival",
+
+      icon:
+        "🎉",
+
+      type:
+        "event",
+
+      message:
+        "You have arrived during the Cashline City Festival!"
+
+    },
+
+
+    /* 4 */
+
+    {
+
+      label:
+        "Checkpoint",
+
+      icon:
+        "🚩",
+
+      type:
+        "normal"
+
+    },
+
+
+    /* 5 */
+
+    {
+
+      label:
+        "Taxi Ride",
+
+      icon:
+        "🚕",
+
+      type:
+        "travel",
+
+      message:
+        "The taxi takes you forward two spaces.",
+
+      effect: {
+
+        move:
+          2
+
+      }
+
+    },
+
+
+    /* 6 */
+
+    {
+
+      label:
+        "Cash Bonus +$30",
+
+      icon:
+        "💵",
+
+      type:
+        "good"
+
+    },
+
+
+    /* 7 */
+
+    {
+
+      label:
+        "Roll Again",
+
+      icon:
+        "🎲",
+
+      type:
+        "good",
+
+      message:
+        "Lucky! Roll the dice again."
+
+    },
+
+
+    /* 8 */
+
+    {
+
+      label:
+        "Win Competition +$80",
+
+      icon:
+        "🏆",
+
+      type:
+        "good",
+
+      message:
+        "You won the city competition!"
+
+    },
+
+
+    /* 9 */
+
+    {
+
+      label:
+        "Miss a Turn",
+
+      icon:
+        "⏳",
+
+      type:
+        "bad",
+
+      message:
+        "You're delayed in the city.",
+
+      effect: {
+
+        skip:
+          true
+
+      }
+
+    },
+
+
+    /* 10 */
+
+    {
+
+      label:
+        "Coin Pouch +$50",
+
+      icon:
+        "💰",
+
+      type:
+        "good"
+
+    },
+
+
+    /* 11 */
+
+    {
+
+      label:
+        "Traffic Jam",
+
+      icon:
+        "🚗",
+
+      type:
+        "bad",
+
+      message:
+        "Traffic sends you back two spaces.",
+
+      effect: {
+
+        move:
+          -2
+
+      }
+
+    },
+
+
+    /* 12 */
+
+    {
+
+      label:
+        "Lucky Street",
+
+      icon:
+        "🍀",
+
+      type:
+        "good"
+
+    },
+
+
+    /* 13 */
+
+    {
+
+      label:
+        "Market",
+
+      icon:
+        "🏪",
+
+      type:
+        "event"
+
+    },
+
+
+    /* 14 */
+
+    {
+
+      label:
+        "Bank Bonus +$20",
+
+      icon:
+        "🏦",
+
+      type:
+        "good"
+
+    },
+
+
+    /* 15 */
+
+    {
+
+      label:
+        "Wrong Turn",
+
+      icon:
+        "↩️",
+
+      type:
+        "bad",
+
+      message:
+        "Move backwards two spaces.",
+
+      effect: {
+
+        move:
+          -2
+
+      }
+
+    },
+
+
+    /* 16 */
+
+    {
+
+      label:
+        "Night Out -$5",
+
+      icon:
+        "🎵",
+
+      type:
+        "event"
+
+    },
+
+
+    /* 17 */
+
+    {
+
+      label:
+        "Checkpoint",
+
+      icon:
+        "🚩",
+
+      type:
+        "normal"
+
+    },
+
+
+    /* 18 */
+
+    {
+
+      label:
+        "Hotel",
+
+      icon:
+        "🏨",
+
+      type:
+        "bad",
+
+      message:
+        "Stay the night. Miss your next turn.",
+
+      effect: {
+
+        skip:
+          true
+
+      }
+
+    },
+
+
+    /* 19 */
+
+    {
+
+      label:
+        "Express Taxi",
+
+      icon:
+        "🚕",
+
+      type:
+        "travel",
+
+      message:
+        "Express taxi! Move forward two spaces.",
+
+      effect: {
+
+        move:
+          2
+
+      }
+
+    },
+
+
+    /* 20 */
+
+    {
+
+      label:
+        "Shopping District",
+
+      icon:
+        "🛍️",
+
+      type:
+        "event"
+
+    },
+
+
+    /* 21 */
+
+    {
+
+      label:
+        "Bonus +$20",
+
+      icon:
+        "💵",
+
+      type:
+        "good"
+
+    },
+
+
+    /* 22 */
+
+    {
+
+      label:
+        "City Square",
+
+      icon:
+        "⛲",
+
+      type:
+        "event"
+
+    },
+
+
+    /* 23 */
+
+    {
+
+      label:
+        "Final Checkpoint",
+
+      icon:
+        "🚩",
+
+      type:
+        "normal"
+
+    },
+
+
+    /* 24 */
+
+    {
+
+      label:
+        "Passport Office",
+
+      icon:
+        "🛂",
+
+      type:
+        "finish",
+
+      message:
+        "Cashline City complete!"
+
+    }
+
+
+  ]
+
+});
 
 </script>
 
 
 </body>
+
 </html>
