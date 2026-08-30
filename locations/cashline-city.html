@@ -192,19 +192,26 @@ loadIslandBoard({
 
     {
 
-      label:
-        "Go Shopping -$50",
+  label:
+    "Go Shopping -$50",
 
-      icon:
-        "🛍️",
+  icon:
+    "🛍️",
 
-      type:
-        "bad",
+  type:
+    "bad",
 
-      message:
-        "A shopping spree has emptied your wallet."
+  message:
+    "A shopping spree has emptied your wallet.",
 
-    },
+  effect: {
+
+    money:
+      -50
+
+  }
+
+},
 
 
     /* 3 */
@@ -288,16 +295,23 @@ loadIslandBoard({
 
     {
 
-      label:
-        "Cash Bonus +$30",
+  label:
+    "Cash Bonus +$30",
 
-      icon:
-        "💵",
+  icon:
+    "💵",
 
-      type:
-        "good"
+  type:
+    "good",
 
-    },
+  effect: {
+
+    money:
+      30
+
+  }
+
+},
 
 
     /* 7 */
@@ -333,7 +347,14 @@ loadIslandBoard({
         "good",
 
       message:
-        "You won the city competition!"
+        "You won the city competition!",
+      
+        effect: {
+
+  money:
+    80
+
+}
 
     },
 
@@ -375,7 +396,13 @@ loadIslandBoard({
         "💰",
 
       type:
-        "good"
+        "good",
+      effect: {
+
+  money:
+    50
+
+}
 
     },
 
@@ -455,7 +482,13 @@ loadIslandBoard({
         "🏦",
 
       type:
-        "good"
+        "good",
+      effect: {
+
+  money:
+    20
+
+}
 
     },
 
@@ -497,7 +530,13 @@ loadIslandBoard({
         "🎵",
 
       type:
-        "event"
+        "event",
+      effect: {
+
+  money:
+    -5
+
+}
 
     },
 
@@ -613,7 +652,13 @@ loadIslandBoard({
         "💵",
 
       type:
-        "good"
+        "good",
+      effect: {
+
+  money:
+    20
+
+}
 
     },
 
