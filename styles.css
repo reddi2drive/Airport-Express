@@ -2644,3 +2644,264 @@ a {
     rgba(191,135,20,.22);
 
 }
+/* =========================================================
+   CASHLINE CITY - RED THEME
+========================================================= */
+
+body.cashline-theme {
+  background:
+    radial-gradient(
+      circle at 15% 5%,
+      rgba(210,30,45,.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #fff4f5,
+      #f6e7e9
+    );
+}
+
+
+/* HEADER */
+
+.cashline-theme .board-back,
+.cashline-theme .eyebrow.dark {
+  color: #d22332;
+}
+
+.cashline-theme .board-header h1 {
+  color: #991722;
+}
+
+.cashline-theme .board-header p {
+  color: #80565a;
+}
+
+
+/* MAIN BOARD */
+
+.cashline-theme .island-board {
+  background:
+    linear-gradient(
+      145deg,
+      #8c121c,
+      #c32230
+    );
+
+  border:
+    6px solid #751018;
+
+  box-shadow:
+    0 24px 55px
+    rgba(120,15,25,.28);
+}
+
+
+/* NORMAL BOARD SQUARES */
+
+.cashline-theme .board-space {
+  background: #fff0f1;
+  color: #73151d;
+
+  border:
+    2px solid
+    rgba(125,20,30,.22);
+}
+
+
+/* ALTERNATING RED/PINK */
+
+.cashline-theme .board-space:nth-child(odd) {
+  background: #ffdfe2;
+}
+
+
+/* START */
+
+.cashline-theme .space-start {
+  background:
+    linear-gradient(
+      145deg,
+      #ef4855,
+      #bf202c
+    );
+
+  color: white;
+}
+
+
+/* GOOD SPACES */
+
+.cashline-theme .space-good {
+  background:
+    linear-gradient(
+      145deg,
+      #ff7780,
+      #dc3542
+    );
+
+  color: white;
+}
+
+
+/* BAD SPACES */
+
+.cashline-theme .space-bad {
+  background:
+    linear-gradient(
+      145deg,
+      #92151f,
+      #5e0d14
+    );
+
+  color: white;
+}
+
+
+/* EVENT SPACES */
+
+.cashline-theme .space-event {
+  background:
+    #ffadb4;
+
+  color:
+    #681118;
+}
+
+
+/* TRAVEL */
+
+.cashline-theme .space-travel {
+  background:
+    linear-gradient(
+      145deg,
+      #d92937,
+      #9e1721
+    );
+
+  color: white;
+}
+
+
+/* FINISH / PASSPORT */
+
+.cashline-theme .space-finish {
+  background:
+    linear-gradient(
+      145deg,
+      #ffdc67,
+      #f2b71f
+    );
+
+  color:
+    #631118;
+
+  border:
+    3px solid #7e1119;
+}
+
+
+/* CENTRE */
+
+.cashline-theme .board-centre {
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,.2),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #ee3c49,
+      #bd1d29 50%,
+      #731018
+    );
+
+  border:
+    4px solid
+    rgba(255,255,255,.15);
+}
+
+
+/* PLAYER CURRENT SQUARE */
+
+.cashline-theme .current-space {
+  outline:
+    5px solid #ffd438;
+
+  outline-offset:
+    -5px;
+}
+
+
+/* PLAYER MARKER */
+
+.cashline-theme .player-marker {
+  border:
+    4px solid #c4202d;
+
+  background:
+    white;
+}
+
+
+/* DICE BOX */
+
+.cashline-theme .dice-panel {
+  border:
+    3px solid
+    rgba(190,30,42,.18);
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fff2f3
+    );
+}
+
+.cashline-theme .dice-panel h2 {
+  color:
+    #911621;
+}
+
+.cashline-theme .dice-face {
+  color:
+    #b51b27;
+}
+
+
+/* ROLL DICE BUTTON */
+
+.cashline-theme .roll-dice {
+  background:
+    linear-gradient(
+      135deg,
+      #ef3c49,
+      #c7202d 55%,
+      #8c141e
+    );
+
+  color:
+    white;
+
+  box-shadow:
+    0 10px 22px
+    rgba(170,25,36,.3);
+}
+
+
+/* MESSAGE */
+
+.cashline-theme .board-message {
+  background:
+    #ffe5e7;
+
+  color:
+    #72151e;
+
+  border:
+    1px solid
+    rgba(190,30,42,.18);
+}
