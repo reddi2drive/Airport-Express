@@ -376,7 +376,7 @@ function loadAirport() {
 
 
 
-  /* DESTINATION CARDS */
+  /* DESTINATIONS / MAP STOPS */
 
   document
     .querySelectorAll(
@@ -388,20 +388,22 @@ function loadAirport() {
         const id =
           card.dataset.destination;
 
-
         const status =
           card.querySelector(
-            ".destination-status"
+            ".destination-status, .map-stop-tag"
           );
-
 
         if (
           progress.stamps.includes(id)
         ) {
+          if (status) {
+            status.textContent =
+              "STAMPED ✓";
+          }
 
-          status.textContent =
-            "STAMPED ✓";
-
+          card.classList.add(
+            "stamped"
+          );
         }
 
       }
