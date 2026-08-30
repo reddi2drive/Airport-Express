@@ -25,9 +25,11 @@ body {
       #f8fbfd 100%
     );
 
-  color: #17324d;
+  color:
+    #17324d;
 
-  min-height: 100vh;
+  min-height:
+    100vh;
 }
 
 a {
@@ -43,16 +45,26 @@ a {
 
 .topbar {
 
-  position: sticky;
-  top: 0;
+  position:
+    sticky;
 
-  z-index: 100;
+  top:
+    0;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  z-index:
+    100;
 
-  gap: 20px;
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  gap:
+    20px;
 
   padding:
     14px
@@ -65,46 +77,68 @@ a {
     blur(12px);
 
   border-bottom:
-    1px solid rgba(0,0,0,.08);
+    1px solid
+    rgba(0,0,0,.08);
+
 }
 
 
 .brand {
 
-  display: flex;
-  align-items: center;
+  display:
+    flex;
 
-  gap: 12px;
+  align-items:
+    center;
 
-  font-size: 20px;
+  gap:
+    12px;
 
-  font-weight: 900;
+  font-size:
+    20px;
+
+  font-weight:
+    900;
+
 }
 
 
 .brand small {
 
-  display: block;
+  display:
+    block;
 
-  margin-top: 2px;
+  margin-top:
+    2px;
 
-  font-size: 10px;
+  font-size:
+    10px;
 
-  letter-spacing: .15em;
+  letter-spacing:
+    .15em;
 
-  color: #788b9b;
+  color:
+    #788b9b;
+
 }
 
 
 .brand-plane {
 
-  width: 44px;
-  height: 44px;
+  width:
+    44px;
 
-  display: grid;
-  place-items: center;
+  height:
+    44px;
 
-  border-radius: 14px;
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    14px;
 
   background:
     linear-gradient(
@@ -113,22 +147,29 @@ a {
       #087da8
     );
 
-  color: white;
+  color:
+    white;
 
-  font-size: 25px;
+  font-size:
+    25px;
 
   transform:
     rotate(-8deg);
+
 }
 
 
 .top-actions {
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 12px;
+  gap:
+    12px;
+
 }
 
 
@@ -138,24 +179,29 @@ a {
     10px
     15px;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   background:
     #edf7fb;
 
-  font-weight: 800;
+  font-weight:
+    800;
+
 }
 
 
 .reset-button {
 
-  border: none;
+  border:
+    none;
 
   padding:
     10px
     15px;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   background:
     #ffedef;
@@ -163,9 +209,12 @@ a {
   color:
     #a42935;
 
-  font-weight: 800;
+  font-weight:
+    800;
 
-  cursor: pointer;
+  cursor:
+    pointer;
+
 }
 
 
@@ -184,6 +233,7 @@ a {
 
   margin:
     30px auto 70px;
+
 }
 
 
@@ -194,21 +244,27 @@ a {
 
 .airport-hero {
 
-  position: relative;
+  position:
+    relative;
 
-  overflow: hidden;
+  overflow:
+    hidden;
 
-  display: grid;
+  display:
+    grid;
 
   grid-template-columns:
     1.3fr
     .7fr;
 
-  gap: 30px;
+  gap:
+    30px;
 
-  align-items: center;
+  align-items:
+    center;
 
-  min-height: 340px;
+  min-height:
+    340px;
 
   padding:
     clamp(
@@ -240,6 +296,7 @@ a {
   box-shadow:
     0 25px 60px
     rgba(12,92,127,.22);
+
 }
 
 
@@ -265,6 +322,7 @@ a {
 
   transform:
     rotate(-15deg);
+
 }
 
 
@@ -275,6 +333,7 @@ a {
 
   z-index:
     2;
+
 }
 
 
@@ -291,6 +350,7 @@ a {
 
   margin-bottom:
     10px;
+
 }
 
 
@@ -298,6 +358,7 @@ a {
 
   color:
     #2185a8;
+
 }
 
 
@@ -318,6 +379,7 @@ a {
 
   letter-spacing:
     -.06em;
+
 }
 
 
@@ -337,6 +399,7 @@ a {
 
   color:
     rgba(255,255,255,.9);
+
 }
 
 
@@ -368,6 +431,7 @@ a {
 
   backdrop-filter:
     blur(12px);
+
 }
 
 
@@ -384,6 +448,7 @@ a {
 
   font-weight:
     800;
+
 }
 
 
@@ -403,6 +468,7 @@ a {
 
   background:
     rgba(255,255,255,.2);
+
 }
 
 
@@ -426,6 +492,7 @@ a {
 
   transition:
     width .4s ease;
+
 }
 
 
@@ -442,6 +509,7 @@ a {
 
   margin-top:
     18px;
+
 }
 
 
@@ -468,6 +536,7 @@ a {
 
   opacity:
     .3;
+
 }
 
 
@@ -481,25 +550,20 @@ a {
 
   background:
     rgba(255,255,255,.15);
+
 }
 
 
 
 /* ================================================
-   DESTINATIONS
+   SECTION HEADINGS
 ================================================ */
-
-.destination-section {
-
-  margin-top:
-    50px;
-}
-
 
 .section-heading {
 
   margin-bottom:
     20px;
+
 }
 
 
@@ -517,6 +581,7 @@ a {
 
   letter-spacing:
     -.045em;
+
 }
 
 
@@ -527,6 +592,20 @@ a {
 
   color:
     #718598;
+
+}
+
+
+
+/* ================================================
+   LEGACY DESTINATION GRID
+================================================ */
+
+.destination-section {
+
+  margin-top:
+    50px;
+
 }
 
 
@@ -540,6 +619,7 @@ a {
 
   gap:
     18px;
+
 }
 
 
@@ -570,6 +650,7 @@ a {
   transition:
     transform .25s ease,
     box-shadow .25s ease;
+
 }
 
 
@@ -581,6 +662,7 @@ a {
   box-shadow:
     0 25px 45px
     rgba(29,66,91,.2);
+
 }
 
 
@@ -609,6 +691,7 @@ a {
 
   background:
     rgba(255,255,255,.11);
+
 }
 
 
@@ -625,6 +708,7 @@ a {
 
   font-size:
     40px;
+
 }
 
 
@@ -640,8 +724,7 @@ a {
     20px;
 
   padding:
-    8px
-    11px;
+    8px 11px;
 
   border:
     1px solid
@@ -658,6 +741,7 @@ a {
 
   font-weight:
     900;
+
 }
 
 
@@ -671,6 +755,7 @@ a {
 
   margin-top:
     95px;
+
 }
 
 
@@ -684,6 +769,7 @@ a {
 
   letter-spacing:
     -.04em;
+
 }
 
 
@@ -700,6 +786,7 @@ a {
 
   line-height:
     1.45;
+
 }
 
 
@@ -719,6 +806,7 @@ a {
 
   letter-spacing:
     .08em;
+
 }
 
 
@@ -727,9 +815,10 @@ a {
   background:
     linear-gradient(
       145deg,
-      #895be0,
-      #5135aa
+      #ef3c49,
+      #a91825
     );
+
 }
 
 
@@ -741,6 +830,7 @@ a {
       #48aee1,
       #3257b6
     );
+
 }
 
 
@@ -752,6 +842,7 @@ a {
       #43bf73,
       #16714c
     );
+
 }
 
 
@@ -763,6 +854,7 @@ a {
       #a061df,
       #58348c
     );
+
 }
 
 
@@ -774,6 +866,7 @@ a {
       #ff8791,
       #d94368
     );
+
 }
 
 
@@ -785,12 +878,13 @@ a {
       #2bc8c3,
       #0989a7
     );
+
 }
 
 
 
 /* ================================================
-   PASSPORT
+   PASSPORT SECTION
 ================================================ */
 
 .passport-section {
@@ -814,6 +908,7 @@ a {
   box-shadow:
     0 18px 45px
     rgba(30,66,91,.09);
+
 }
 
 
@@ -824,6 +919,7 @@ a {
 
   font-size:
     36px;
+
 }
 
 
@@ -834,6 +930,7 @@ a {
 
   color:
     #718598;
+
 }
 
 
@@ -847,6 +944,7 @@ a {
 
   gap:
     12px;
+
 }
 
 
@@ -888,6 +986,7 @@ a {
 
   background:
     #fbfdfe;
+
 }
 
 
@@ -901,6 +1000,7 @@ a {
 
   opacity:
     .3;
+
 }
 
 
@@ -908,6 +1008,7 @@ a {
 
   font-size:
     12px;
+
 }
 
 
@@ -921,6 +1022,7 @@ a {
 
   background:
     #f1faf6;
+
 }
 
 
@@ -931,6 +1033,7 @@ a {
 
   opacity:
     1;
+
 }
 
 
@@ -956,18 +1059,20 @@ a {
 
   font-weight:
     700;
+
 }
 
 
 
 /* ================================================
-   ISLAND PAGE
+   LEGACY ISLAND PAGE
 ================================================ */
 
 .island-page {
 
   background:
     #eff7fb;
+
 }
 
 
@@ -990,6 +1095,7 @@ a {
 
   border-radius:
     0 0 36px 36px;
+
 }
 
 
@@ -1003,6 +1109,7 @@ a {
 
   margin:
     auto;
+
 }
 
 
@@ -1019,6 +1126,7 @@ a {
 
   font-weight:
     800;
+
 }
 
 
@@ -1039,6 +1147,7 @@ a {
 
   letter-spacing:
     -.06em;
+
 }
 
 
@@ -1058,6 +1167,7 @@ a {
 
   line-height:
     1.6;
+
 }
 
 
@@ -1071,6 +1181,7 @@ a {
 
   margin:
     30px auto 70px;
+
 }
 
 
@@ -1085,6 +1196,7 @@ a {
 
   gap:
     20px;
+
 }
 
 
@@ -1106,6 +1218,7 @@ a {
   box-shadow:
     0 15px 35px
     rgba(26,65,90,.09);
+
 }
 
 
@@ -1116,6 +1229,7 @@ a {
 
   font-size:
     30px;
+
 }
 
 
@@ -1129,6 +1243,7 @@ a {
 
   line-height:
     1.6;
+
 }
 
 
@@ -1142,6 +1257,7 @@ a {
 
   margin-top:
     22px;
+
 }
 
 
@@ -1168,6 +1284,7 @@ a {
 
   background:
     #fbfdfe;
+
 }
 
 
@@ -1199,6 +1316,7 @@ a {
 
   font-weight:
     900;
+
 }
 
 
@@ -1206,6 +1324,7 @@ a {
 
   flex:
     1;
+
 }
 
 
@@ -1216,6 +1335,7 @@ a {
 
   margin-bottom:
     4px;
+
 }
 
 
@@ -1226,6 +1346,7 @@ a {
 
   font-size:
     14px;
+
 }
 
 
@@ -1238,8 +1359,7 @@ a {
     12px;
 
   padding:
-    10px
-    13px;
+    10px 13px;
 
   background:
     #edf3f6;
@@ -1252,6 +1372,7 @@ a {
 
   cursor:
     pointer;
+
 }
 
 
@@ -1262,6 +1383,7 @@ a {
 
   border-color:
     #bfe4cd;
+
 }
 
 
@@ -1272,6 +1394,7 @@ a {
 
   color:
     #1b7842;
+
 }
 
 
@@ -1285,6 +1408,7 @@ a {
 
   margin:
     10px 0;
+
 }
 
 
@@ -1295,6 +1419,7 @@ a {
 
   font-size:
     22px;
+
 }
 
 
@@ -1308,6 +1433,7 @@ a {
 
   line-height:
     1.5;
+
 }
 
 
@@ -1340,6 +1466,7 @@ a {
 
   cursor:
     pointer;
+
 }
 
 
@@ -1350,6 +1477,7 @@ a {
 
   cursor:
     not-allowed;
+
 }
 
 
@@ -1375,6 +1503,7 @@ a {
 
   line-height:
     1.5;
+
 }
 
 
@@ -1385,6 +1514,7 @@ a {
 
   color:
     #207340;
+
 }
 
 
@@ -1413,21 +1543,22 @@ a {
 
   font-weight:
     900;
+
 }
 
 
 
 /* ================================================
-   RESPONSIVE
+   GENERAL RESPONSIVE
 ================================================ */
 
-@media
-(max-width: 900px) {
+@media (max-width: 900px) {
 
   .airport-hero {
 
     grid-template-columns:
       1fr;
+
   }
 
 
@@ -1435,6 +1566,7 @@ a {
 
     grid-template-columns:
       repeat(2,1fr);
+
   }
 
 
@@ -1442,6 +1574,7 @@ a {
 
     grid-template-columns:
       repeat(3,1fr);
+
   }
 
 
@@ -1449,18 +1582,19 @@ a {
 
     grid-template-columns:
       1fr;
+
   }
 
 }
 
 
-@media
-(max-width: 600px) {
+@media (max-width: 600px) {
 
   .topbar {
 
     align-items:
       flex-start;
+
   }
 
 
@@ -1468,6 +1602,7 @@ a {
 
     display:
       none;
+
   }
 
 
@@ -1475,6 +1610,7 @@ a {
 
     grid-template-columns:
       1fr;
+
   }
 
 
@@ -1482,6 +1618,7 @@ a {
 
     grid-template-columns:
       repeat(2,1fr);
+
   }
 
 
@@ -1489,9 +1626,12 @@ a {
 
     font-size:
       44px;
+
   }
 
 }
+
+
 
 /* =========================================================
    AIRPORT EXPRESS
@@ -1574,8 +1714,9 @@ a {
 }
 
 
+
 /* =========================================================
-   MAIN GAME LAYOUT
+   BOARD GAME LAYOUT
 ========================================================= */
 
 .board-game-layout {
@@ -1584,7 +1725,7 @@ a {
     grid;
 
   grid-template-columns:
-    minmax(0, 1fr)
+    minmax(0,1fr)
     300px;
 
   gap:
@@ -1596,11 +1737,15 @@ a {
 }
 
 
+
 /* =========================================================
    BOARD
 ========================================================= */
 
 .island-board {
+
+  position:
+    relative;
 
   display:
     grid;
@@ -1634,10 +1779,8 @@ a {
     0 18px 45px
     rgba(25,66,91,.12);
 
-  position:
-    relative;
-
 }
+
 
 
 /* =========================================================
@@ -1742,6 +1885,7 @@ a {
 }
 
 
+
 /* =========================================================
    SPACE TYPES
 ========================================================= */
@@ -1798,6 +1942,7 @@ a {
 }
 
 
+
 /* =========================================================
    CURRENT POSITION
 ========================================================= */
@@ -1812,6 +1957,7 @@ a {
     -3px;
 
 }
+
 
 
 /* =========================================================
@@ -1928,6 +2074,7 @@ a {
 }
 
 
+
 /* =========================================================
    PLAYER MARKER
 ========================================================= */
@@ -1975,6 +2122,7 @@ a {
     .25s ease;
 
 }
+
 
 
 /* =========================================================
@@ -2158,12 +2306,12 @@ a {
 }
 
 
+
 /* =========================================================
-   RESPONSIVE
+   BOARD RESPONSIVE
 ========================================================= */
 
-@media
-(max-width: 900px) {
+@media (max-width: 900px) {
 
   .board-game-layout {
 
@@ -2183,8 +2331,7 @@ a {
 }
 
 
-@media
-(max-width: 600px) {
+@media (max-width: 600px) {
 
   .island-board {
 
@@ -2230,458 +2377,66 @@ a {
   }
 
 }
+
+
+
 /* =========================================================
    CASHLINE CITY
    RED THEME
 ========================================================= */
 
-.cashline-theme {
-
-  --cash-red:
-    #d92735;
-
-  --cash-red-dark:
-    #981923;
-
-  --cash-red-deep:
-    #69131a;
-
-  --cash-red-light:
-    #fff0f1;
-
-  --cash-gold:
-    #ffd05a;
-
-}
-
-
-/* =========================================================
-   PAGE
-========================================================= */
-
-.cashline-theme {
-
-  background:
-
-    radial-gradient(
-      circle at 15% 0%,
-      rgba(217,39,53,.10),
-      transparent 30%
-    ),
-
-    linear-gradient(
-      180deg,
-      #fff7f7,
-      #f8f3f3
-    );
-
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.cashline-theme
-.board-back {
-
-  color:
-    var(--cash-red);
-
-}
-
-
-.cashline-theme
-.eyebrow.dark {
-
-  color:
-    var(--cash-red);
-
-}
-
-
-.cashline-theme
-.board-header h1 {
-
-  color:
-    var(--cash-red-dark);
-
-}
-
-
-/* =========================================================
-   BOARD
-========================================================= */
-
-.cashline-theme
-.island-board {
-
-  border:
-    3px solid
-    rgba(217,39,53,.18);
-
-  background:
-    #fffafa;
-
-  box-shadow:
-    0 22px 55px
-    rgba(145,24,34,.18);
-
-}
-
-
-/* =========================================================
-   CENTRE
-========================================================= */
-
-.cashline-theme
-.board-centre {
-
-  background:
-
-    radial-gradient(
-      circle at 50% 15%,
-      rgba(255,255,255,.20),
-      transparent 35%
-    ),
-
-    linear-gradient(
-      145deg,
-      #ef3d49,
-      #b91e2b 55%,
-      #7f151e
-    );
-
-  border:
-    3px solid
-    rgba(255,255,255,.15);
-
-}
-
-
-/* =========================================================
-   PLAYER POSITION
-========================================================= */
-
-.cashline-theme
-.current-space {
-
-  outline:
-    4px solid
-    var(--cash-red);
-
-  outline-offset:
-    -4px;
-
-}
-
-
-/* =========================================================
-   STANDARD SPACES
-========================================================= */
-
-.cashline-theme
-.board-space {
-
-  border-color:
-    rgba(126,32,39,.15);
-
-}
-
-
-/* START */
-
-.cashline-theme
-.space-start {
-
-  background:
-    #ffe5e7;
-
-  border-color:
-    #e3646e;
-
-}
-
-
-/* GOOD */
-
-.cashline-theme
-.space-good {
-
-  background:
-    #fff4d7;
-
-  border-color:
-    #edc04e;
-
-}
-
-
-/* BAD */
-
-.cashline-theme
-.space-bad {
-
-  background:
-    #ffd9dc;
-
-  border-color:
-    #e35b66;
-
-}
-
-
-/* EVENT */
-
-.cashline-theme
-.space-event {
-
-  background:
-    #fff0f1;
-
-  border-color:
-    #e59298;
-
-}
-
-
-/* TRAVEL */
-
-.cashline-theme
-.space-travel {
-
-  background:
-    #ffe7e9;
-
-  border-color:
-    #ca4550;
-
-}
-
-
-/* NORMAL */
-
-.cashline-theme
-.space-normal {
-
-  background:
-    #fffafa;
-
-}
-
-
-/* FINISH */
-
-.cashline-theme
-.space-finish {
-
-  background:
-
-    linear-gradient(
-      145deg,
-      #ffd866,
-      #ffbf36
-    );
-
-  border:
-    3px solid
-    #a51d28;
-
-  color:
-    #6e151c;
-
-}
-
-
-/* =========================================================
-   PLAYER MARKER
-========================================================= */
-
-.cashline-theme
-.player-marker {
-
-  border:
-    3px solid
-    var(--cash-red);
-
-  background:
-    white;
-
-  box-shadow:
-    0 5px 18px
-    rgba(132,18,28,.35);
-
-}
-
-
-/* =========================================================
-   DICE PANEL
-========================================================= */
-
-.cashline-theme
-.dice-panel {
-
-  border:
-    2px solid
-    rgba(217,39,53,.14);
-
-  box-shadow:
-    0 18px 45px
-    rgba(131,24,32,.14);
-
-}
-
-
-.cashline-theme
-.dice-panel h2 {
-
-  color:
-    var(--cash-red-dark);
-
-}
-
-
-.cashline-theme
-.dice-face {
-
-  color:
-    var(--cash-red-dark);
-
-}
-
-
-/* =========================================================
-   ROLL BUTTON
-========================================================= */
-
-.cashline-theme
-.roll-dice {
-
-  background:
-
-    linear-gradient(
-      135deg,
-      #ef3f4b,
-      #c7212d 60%,
-      #981923
-    );
-
-  box-shadow:
-    0 10px 24px
-    rgba(184,30,42,.28);
-
-}
-
-
-.cashline-theme
-.roll-dice:hover {
-
-  background:
-
-    linear-gradient(
-      135deg,
-      #fa4b57,
-      #d52633 60%,
-      #a51c27
-    );
-
-}
-
-
-/* =========================================================
-   POSITION
-========================================================= */
-
-.cashline-theme
-.position-text {
-
-  color:
-    #9b555a;
-
-}
-
-
-/* =========================================================
-   MESSAGE
-========================================================= */
-
-.cashline-theme
-.board-message {
-
-  background:
-    #fff0f1;
-
-  color:
-    #76252c;
-
-  border:
-    1px solid
-    rgba(217,39,53,.14);
-
-}
-
-
-/* =========================================================
-   RETURN TO AIRPORT
-========================================================= */
-
-.cashline-theme
-.board-return {
-
-  background:
-
-    linear-gradient(
-      135deg,
-      #ffd75e,
-      #ffbd32
-    );
-
-  color:
-    #68131a;
-
-  box-shadow:
-    0 8px 20px
-    rgba(191,135,20,.22);
-
-}
-/* =========================================================
-   CASHLINE CITY - RED THEME
-========================================================= */
-
 body.cashline-theme {
+
   background:
+
     radial-gradient(
       circle at 15% 5%,
       rgba(210,30,45,.18),
       transparent 30%
     ),
+
     linear-gradient(
       180deg,
       #fff4f5,
       #f6e7e9
     );
+
 }
 
 
-/* HEADER */
+
+/* CASHLINE HEADER */
 
 .cashline-theme .board-back,
 .cashline-theme .eyebrow.dark {
-  color: #d22332;
+
+  color:
+    #d22332;
+
 }
+
 
 .cashline-theme .board-header h1 {
-  color: #991722;
+
+  color:
+    #991722;
+
 }
+
 
 .cashline-theme .board-header p {
-  color: #80565a;
+
+  color:
+    #80565a;
+
 }
 
 
-/* MAIN BOARD */
+
+/* CASHLINE BOARD */
 
 .cashline-theme .island-board {
+
   background:
     linear-gradient(
       145deg,
@@ -2690,36 +2445,47 @@ body.cashline-theme {
     );
 
   border:
-    6px solid #751018;
+    6px solid
+    #751018;
 
   box-shadow:
     0 24px 55px
     rgba(120,15,25,.28);
+
 }
 
 
-/* NORMAL BOARD SQUARES */
+
+/* CASHLINE STANDARD SQUARES */
 
 .cashline-theme .board-space {
-  background: #fff0f1;
-  color: #73151d;
+
+  background:
+    #fff0f1;
+
+  color:
+    #73151d;
 
   border:
     2px solid
     rgba(125,20,30,.22);
+
 }
 
-
-/* ALTERNATING RED/PINK */
 
 .cashline-theme .board-space:nth-child(odd) {
-  background: #ffdfe2;
+
+  background:
+    #ffdfe2;
+
 }
 
 
-/* START */
+
+/* CASHLINE START */
 
 .cashline-theme .space-start {
+
   background:
     linear-gradient(
       145deg,
@@ -2727,13 +2493,17 @@ body.cashline-theme {
       #bf202c
     );
 
-  color: white;
+  color:
+    white;
+
 }
 
 
-/* GOOD SPACES */
+
+/* CASHLINE GOOD */
 
 .cashline-theme .space-good {
+
   background:
     linear-gradient(
       145deg,
@@ -2741,13 +2511,17 @@ body.cashline-theme {
       #dc3542
     );
 
-  color: white;
+  color:
+    white;
+
 }
 
 
-/* BAD SPACES */
+
+/* CASHLINE BAD */
 
 .cashline-theme .space-bad {
+
   background:
     linear-gradient(
       145deg,
@@ -2755,24 +2529,31 @@ body.cashline-theme {
       #5e0d14
     );
 
-  color: white;
+  color:
+    white;
+
 }
 
 
-/* EVENT SPACES */
+
+/* CASHLINE EVENT */
 
 .cashline-theme .space-event {
+
   background:
     #ffadb4;
 
   color:
     #681118;
+
 }
 
 
-/* TRAVEL */
+
+/* CASHLINE TRAVEL */
 
 .cashline-theme .space-travel {
+
   background:
     linear-gradient(
       145deg,
@@ -2780,13 +2561,17 @@ body.cashline-theme {
       #9e1721
     );
 
-  color: white;
+  color:
+    white;
+
 }
 
 
-/* FINISH / PASSPORT */
+
+/* CASHLINE FINISH */
 
 .cashline-theme .space-finish {
+
   background:
     linear-gradient(
       145deg,
@@ -2798,19 +2583,25 @@ body.cashline-theme {
     #631118;
 
   border:
-    3px solid #7e1119;
+    3px solid
+    #7e1119;
+
 }
 
 
-/* CENTRE */
+
+/* CASHLINE CENTRE */
 
 .cashline-theme .board-centre {
+
   background:
+
     radial-gradient(
       circle at top,
       rgba(255,255,255,.2),
       transparent 35%
     ),
+
     linear-gradient(
       145deg,
       #ee3c49,
@@ -2821,34 +2612,49 @@ body.cashline-theme {
   border:
     4px solid
     rgba(255,255,255,.15);
+
 }
 
 
-/* PLAYER CURRENT SQUARE */
+
+/* CASHLINE CURRENT POSITION */
 
 .cashline-theme .current-space {
+
   outline:
-    5px solid #ffd438;
+    5px solid
+    #ffd438;
 
   outline-offset:
     -5px;
+
 }
 
 
-/* PLAYER MARKER */
+
+/* CASHLINE PLAYER */
 
 .cashline-theme .player-marker {
+
   border:
-    4px solid #c4202d;
+    4px solid
+    #c4202d;
 
   background:
     white;
+
+  box-shadow:
+    0 5px 18px
+    rgba(132,18,28,.35);
+
 }
 
 
-/* DICE BOX */
+
+/* CASHLINE DICE PANEL */
 
 .cashline-theme .dice-panel {
+
   border:
     3px solid
     rgba(190,30,42,.18);
@@ -2859,22 +2665,35 @@ body.cashline-theme {
       #ffffff,
       #fff2f3
     );
+
+  box-shadow:
+    0 18px 45px
+    rgba(131,24,32,.14);
+
 }
+
 
 .cashline-theme .dice-panel h2 {
+
   color:
     #911621;
+
 }
+
 
 .cashline-theme .dice-face {
+
   color:
     #b51b27;
+
 }
 
 
-/* ROLL DICE BUTTON */
+
+/* CASHLINE ROLL BUTTON */
 
 .cashline-theme .roll-dice {
+
   background:
     linear-gradient(
       135deg,
@@ -2889,12 +2708,39 @@ body.cashline-theme {
   box-shadow:
     0 10px 22px
     rgba(170,25,36,.3);
+
 }
 
 
-/* MESSAGE */
+.cashline-theme .roll-dice:hover {
+
+  background:
+    linear-gradient(
+      135deg,
+      #fa4b57,
+      #d52633 60%,
+      #a51c27
+    );
+
+}
+
+
+
+/* CASHLINE POSITION */
+
+.cashline-theme .position-text {
+
+  color:
+    #9b555a;
+
+}
+
+
+
+/* CASHLINE MESSAGE */
 
 .cashline-theme .board-message {
+
   background:
     #ffe5e7;
 
@@ -2904,9 +2750,34 @@ body.cashline-theme {
   border:
     1px solid
     rgba(190,30,42,.18);
+
 }
+
+
+
+/* CASHLINE RETURN */
+
+.cashline-theme .board-return {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd75e,
+      #ffbd32
+    );
+
+  color:
+    #68131a;
+
+  box-shadow:
+    0 8px 20px
+    rgba(191,135,20,.22);
+
+}
+
+
+
 /* =========================================================
-   AIRPORT EXPRESS
    PLAYER MONEY + PROPERTIES
 ========================================================= */
 
@@ -3001,15 +2872,15 @@ body.cashline-theme {
 }
 
 
+
 /* =========================================================
-   CASHLINE CITY PROPERTY SPACES
+   CASHLINE PROPERTIES
 ========================================================= */
 
 .cashline-theme
 .board-space.space-property {
 
   background:
-
     linear-gradient(
       145deg,
       #fff3c9,
@@ -3026,8 +2897,7 @@ body.cashline-theme {
 }
 
 
-.cashline-theme
-.player-wallet {
+.cashline-theme .player-wallet {
 
   background:
     #ffe8ea;
@@ -3040,200 +2910,1046 @@ body.cashline-theme {
     rgba(190,30,42,.15);
 
 }
+
+
+
 /* =========================================================
-   THEME PARK STYLE HUB MAP
+   THEME PARK STYLE AIRPORT MAP
 ========================================================= */
 
 .hub-map-section {
-  margin-top: 50px;
+
+  margin-top:
+    50px;
+
 }
+
 
 .map-heading {
-  margin-bottom: 20px;
+
+  margin-bottom:
+    20px;
+
 }
+
+
+
+/* =========================================================
+   MAIN MAP LANDSCAPE
+========================================================= */
 
 .theme-map {
-  position: relative;
-  min-height: 820px;
-  overflow: hidden;
-  border: 2px solid #dce8ef;
-  border-radius: 34px;
+
+  position:
+    relative;
+
+  min-height:
+    820px;
+
+  overflow:
+    hidden;
+
+  isolation:
+    isolate;
+
+  border:
+    3px solid
+    #b8d9df;
+
+  border-radius:
+    38px;
+
   background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 20%),
-    radial-gradient(circle at 80% 25%, rgba(255,255,255,.7), transparent 18%),
-    radial-gradient(circle at 70% 75%, rgba(255,255,255,.6), transparent 22%),
-    linear-gradient(180deg, #dff4ff 0%, #eff9ff 100%);
+
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(178,221,160,.8),
+      transparent 26%
+    ),
+
+    radial-gradient(
+      ellipse at 85% 17%,
+      rgba(223,236,244,.9),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      ellipse at 15% 72%,
+      rgba(125,205,137,.55),
+      transparent 24%
+    ),
+
+    radial-gradient(
+      ellipse at 50% 88%,
+      rgba(181,145,218,.28),
+      transparent 23%
+    ),
+
+    radial-gradient(
+      ellipse at 80% 82%,
+      rgba(255,170,158,.4),
+      transparent 26%
+    ),
+
+    linear-gradient(
+      180deg,
+      #a9e2ef 0%,
+      #d8f1e4 43%,
+      #b9df9e 100%
+    );
+
   box-shadow:
-    0 22px 50px rgba(30,66,91,.10);
+    0 25px 60px
+    rgba(30,66,91,.16);
+
 }
 
 
-/* MAP PATHS */
+
+/* =========================================================
+   MAP TERRAIN ZONES
+========================================================= */
+
+.map-zone {
+
+  position:
+    absolute;
+
+  z-index:
+    1;
+
+  pointer-events:
+    none;
+
+  border:
+    5px solid
+    rgba(255,255,255,.48);
+
+  box-shadow:
+    0 10px 28px
+    rgba(37,76,61,.12);
+
+}
+
+
+
+/* CASHLINE CITY TERRAIN */
+
+.city-zone {
+
+  width:
+    285px;
+
+  height:
+    230px;
+
+  top:
+    35px;
+
+  left:
+    35px;
+
+  border-radius:
+    44% 56% 52% 48% /
+    52% 42% 58% 48%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e7d7d9,
+      #c8b9bc
+    );
+
+}
+
+
+
+/* HOPE'S PEAK TERRAIN */
+
+.mountain-zone {
+
+  width:
+    290px;
+
+  height:
+    235px;
+
+  top:
+    30px;
+
+  right:
+    40px;
+
+  border-radius:
+    55% 45% 42% 58% /
+    40% 58% 42% 60%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e9f2f5,
+      #b7d1da
+    );
+
+}
+
+
+
+/* WILD HEART TERRAIN */
+
+.rainforest-zone {
+
+  width:
+    260px;
+
+  height:
+    250px;
+
+  top:
+    275px;
+
+  left:
+    18px;
+
+  border-radius:
+    46% 54% 60% 40% /
+    55% 40% 60% 45%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #77cb82,
+      #3f9960
+    );
+
+}
+
+
+
+/* AMETHYST TERRAIN */
+
+.amethyst-zone {
+
+  width:
+    300px;
+
+  height:
+    220px;
+
+  bottom:
+    45px;
+
+  left:
+    130px;
+
+  border-radius:
+    58% 42% 50% 50% /
+    45% 58% 42% 55%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #d7c1ee,
+      #a487cf
+    );
+
+}
+
+
+
+/* CORAL COVE TERRAIN */
+
+.coral-zone {
+
+  width:
+    300px;
+
+  height:
+    225px;
+
+  bottom:
+    40px;
+
+  right:
+    130px;
+
+  border-radius:
+    47% 53% 58% 42% /
+    60% 44% 56% 40%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffe0c7,
+      #f8b69f
+    );
+
+}
+
+
+
+/* TROPICAL LAGOON TERRAIN */
+
+.lagoon-zone {
+
+  width:
+    260px;
+
+  height:
+    255px;
+
+  top:
+    285px;
+
+  right:
+    20px;
+
+  border-radius:
+    55% 45% 38% 62% /
+    42% 62% 38% 58%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #8be4d9,
+      #47bdbb
+    );
+
+}
+
+
+
+/* =========================================================
+   MAP TERRAIN DECORATIONS
+========================================================= */
+
+.zone-decoration {
+
+  position:
+    absolute;
+
+  left:
+    22px;
+
+  bottom:
+    15px;
+
+  font-size:
+    48px;
+
+  filter:
+    drop-shadow(
+      0 6px 5px
+      rgba(0,0,0,.12)
+    );
+
+}
+
+
+.zone-decoration.second {
+
+  left:
+    auto;
+
+  right:
+    24px;
+
+  bottom:
+    24px;
+
+  font-size:
+    38px;
+
+}
+
+
+.zone-decoration.third {
+
+  left:
+    50%;
+
+  bottom:
+    10px;
+
+  transform:
+    translateX(-50%);
+
+  font-size:
+    32px;
+
+}
+
+
+
+/* =========================================================
+   MAP CLOUDS
+========================================================= */
+
+.map-cloud {
+
+  position:
+    absolute;
+
+  z-index:
+    1;
+
+  pointer-events:
+    none;
+
+  font-size:
+    52px;
+
+  opacity:
+    .72;
+
+  filter:
+    drop-shadow(
+      0 8px 5px
+      rgba(60,120,140,.10)
+    );
+
+}
+
+
+.cloud-one {
+
+  top:
+    42px;
+
+  left:
+    42%;
+
+}
+
+
+.cloud-two {
+
+  top:
+    235px;
+
+  left:
+    35%;
+
+  font-size:
+    38px;
+
+}
+
+
+.cloud-three {
+
+  top:
+    155px;
+
+  right:
+    30%;
+
+  font-size:
+    34px;
+
+}
+
+
+
+/* =========================================================
+   AIRPORT RUNWAY
+========================================================= */
+
+.airport-runway {
+
+  position:
+    absolute;
+
+  z-index:
+    2;
+
+  top:
+    50%;
+
+  left:
+    50%;
+
+  width:
+    380px;
+
+  height:
+    58px;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-18deg);
+
+  border:
+    5px solid
+    rgba(255,255,255,.62);
+
+  border-radius:
+    14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #76858c,
+      #5d6b72
+    );
+
+  box-shadow:
+    0 9px 20px
+    rgba(43,69,73,.18);
+
+  pointer-events:
+    none;
+
+}
+
+
+.runway-line {
+
+  position:
+    absolute;
+
+  top:
+    50%;
+
+  left:
+    20px;
+
+  right:
+    20px;
+
+  border-top:
+    4px dashed
+    rgba(255,255,255,.9);
+
+}
+
+
+.runway-plane {
+
+  position:
+    absolute;
+
+  right:
+    32px;
+
+  top:
+    50%;
+
+  transform:
+    translateY(-50%)
+    rotate(16deg);
+
+  font-size:
+    31px;
+
+}
+
+
+
+/* =========================================================
+   MAP ROUTES
+========================================================= */
 
 .map-path {
-  position: absolute;
-  border: 4px dashed rgba(61,144,180,.35);
-  border-radius: 999px;
-  pointer-events: none;
+
+  position:
+    absolute;
+
+  z-index:
+    3;
+
+  border:
+    4px dashed
+    rgba(37,126,149,.45);
+
+  border-radius:
+    999px;
+
+  pointer-events:
+    none;
+
 }
+
 
 .path-1 {
-  width: 250px;
-  height: 120px;
-  top: 145px;
-  left: 300px;
-  border-bottom: none;
-  border-left: none;
+
+  width:
+    250px;
+
+  height:
+    120px;
+
+  top:
+    145px;
+
+  left:
+    300px;
+
+  border-bottom:
+    none;
+
+  border-left:
+    none;
+
 }
+
 
 .path-2 {
-  width: 260px;
-  height: 170px;
-  top: 160px;
-  right: 260px;
-  border-bottom: none;
-  border-right: none;
+
+  width:
+    260px;
+
+  height:
+    170px;
+
+  top:
+    160px;
+
+  right:
+    260px;
+
+  border-bottom:
+    none;
+
+  border-right:
+    none;
+
 }
+
 
 .path-3 {
-  width: 230px;
-  height: 190px;
-  top: 320px;
-  left: 180px;
-  border-top: none;
-  border-left: none;
+
+  width:
+    230px;
+
+  height:
+    190px;
+
+  top:
+    320px;
+
+  left:
+    180px;
+
+  border-top:
+    none;
+
+  border-left:
+    none;
+
 }
+
 
 .path-4 {
-  width: 270px;
-  height: 190px;
-  top: 330px;
-  right: 170px;
-  border-top: none;
-  border-right: none;
+
+  width:
+    270px;
+
+  height:
+    190px;
+
+  top:
+    330px;
+
+  right:
+    170px;
+
+  border-top:
+    none;
+
+  border-right:
+    none;
+
 }
+
 
 .path-5 {
-  width: 140px;
-  height: 270px;
-  top: 300px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: none;
-  border-right: none;
+
+  width:
+    140px;
+
+  height:
+    270px;
+
+  top:
+    300px;
+
+  left:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+  border-left:
+    none;
+
+  border-right:
+    none;
+
 }
+
 
 .path-6 {
-  width: 300px;
-  height: 130px;
-  bottom: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-top: none;
+
+  width:
+    300px;
+
+  height:
+    130px;
+
+  bottom:
+    120px;
+
+  left:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+  border-top:
+    none;
+
 }
 
 
-/* AIRPORT HUB */
+
+/* =========================================================
+   AIRPORT HUB
+========================================================= */
 
 .map-hub {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 220px;
-  height: 220px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 30%, #4fd0ef, #168eb8 70%);
-  box-shadow:
-    0 20px 40px rgba(13,111,147,.25);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  z-index: 5;
-  border: 8px solid rgba(255,255,255,.75);
+
+  position:
+    absolute;
+
+  top:
+    50%;
+
+  left:
+    50%;
+
+  z-index:
+    6;
+
+  width:
+    230px;
+
+  height:
+    210px;
+
+  transform:
+    translate(-50%,-50%);
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
 }
+
+
+
+/* =========================================================
+   AIRPORT TERMINAL
+========================================================= */
+
+.map-terminal {
+
+  width:
+    205px;
+
+  min-height:
+    155px;
+
+  padding:
+    25px 18px;
+
+  border:
+    7px solid
+    rgba(255,255,255,.85);
+
+  border-radius:
+    36px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2dc5e7,
+      #087da8
+    );
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  text-align:
+    center;
+
+  color:
+    white;
+
+  box-shadow:
+    0 20px 42px
+    rgba(13,111,147,.30);
+
+}
+
+
+.you-are-here {
+
+  position:
+    absolute;
+
+  top:
+    -6px;
+
+  left:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+  padding:
+    7px 13px;
+
+  border-radius:
+    999px;
+
+  background:
+    #ffd239;
+
+  color:
+    #604500;
+
+  font-size:
+    10px;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    .1em;
+
+  white-space:
+    nowrap;
+
+  box-shadow:
+    0 5px 12px
+    rgba(0,0,0,.12);
+
+}
+
 
 .map-hub-icon {
-  font-size: 46px;
-  margin-bottom: 8px;
+
+  font-size:
+    46px;
+
+  margin-bottom:
+    8px;
+
 }
+
 
 .map-hub-label {
-  font-size: 28px;
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -.04em;
+
+  font-size:
+    26px;
+
+  font-weight:
+    900;
+
+  line-height:
+    1.05;
+
+  letter-spacing:
+    -.04em;
+
 }
+
 
 .map-hub-sub {
-  margin-top: 8px;
-  font-size: 13px;
-  letter-spacing: .14em;
-  font-weight: 800;
-  opacity: .9;
-  text-transform: uppercase;
+
+  margin-top:
+    8px;
+
+  font-size:
+    11px;
+
+  letter-spacing:
+    .14em;
+
+  font-weight:
+    800;
+
+  opacity:
+    .9;
+
+  text-transform:
+    uppercase;
+
 }
 
 
-/* DESTINATION MAP STOPS */
+
+/* =========================================================
+   DESTINATION MAP SIGNS
+========================================================= */
 
 .map-stop {
-  position: absolute;
-  width: 190px;
-  min-height: 140px;
-  padding: 18px 16px 16px;
-  border-radius: 24px;
-  color: white;
-  text-align: center;
+
+  position:
+    absolute;
+
+  z-index:
+    5;
+
+  width:
+    190px;
+
+  min-height:
+    125px;
+
+  padding:
+    17px 15px;
+
+  border:
+    5px solid
+    rgba(255,255,255,.72);
+
+  border-radius:
+    26px;
+
+  color:
+    white;
+
+  text-align:
+    center;
+
   box-shadow:
-    0 16px 35px rgba(31,63,87,.16);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: transform .22s ease, box-shadow .22s ease;
-  z-index: 3;
+    0 13px 26px
+    rgba(31,63,87,.22);
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    7px;
+
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease;
+
 }
+
 
 .map-stop:hover {
-  transform: translateY(-5px) scale(1.02);
+
+  transform:
+    translateY(-5px)
+    scale(1.02);
+
   box-shadow:
-    0 22px 42px rgba(31,63,87,.20);
+    0 20px 35px
+    rgba(31,63,87,.28);
+
 }
+
 
 .map-stop-icon {
-  font-size: 34px;
+
+  font-size:
+    36px;
+
+  filter:
+    drop-shadow(
+      0 4px 3px
+      rgba(0,0,0,.12)
+    );
+
 }
+
 
 .map-stop-name {
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 1.1;
+
+  font-size:
+    21px;
+
+  font-weight:
+    900;
+
+  line-height:
+    1.05;
+
 }
+
 
 .map-stop-tag {
-  margin-top: 2px;
-  padding: 7px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.24);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+
+  margin-top:
+    2px;
+
+  padding:
+    7px 12px;
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(255,255,255,.18);
+
+  border:
+    1px solid
+    rgba(255,255,255,.28);
+
+  font-size:
+    11px;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    .08em;
+
+  text-transform:
+    uppercase;
+
 }
 
 
-/* DESTINATION POSITIONS */
+
+/* =========================================================
+   DESTINATION POSITIONS
+========================================================= */
 
 .cashline-stop {
-  top: 80px;
-  left: 90px;
+
+  top:
+    80px;
+
+  left:
+    90px;
 
   background:
     linear-gradient(
@@ -3241,124 +3957,411 @@ body.cashline-theme {
       #ef3c49,
       #a91825
     );
+
 }
+
 
 .hopes-stop {
-  top: 90px;
-  right: 120px;
-  background: linear-gradient(145deg, #5ab6ef, #3565c6);
+
+  top:
+    90px;
+
+  right:
+    120px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #5ab6ef,
+      #3565c6
+    );
+
 }
+
 
 .wildheart-stop {
-  top: 310px;
-  left: 55px;
-  background: linear-gradient(145deg, #48c86f, #1b8552);
+
+  top:
+    310px;
+
+  left:
+    55px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #48c86f,
+      #1b8552
+    );
+
 }
+
 
 .amethyst-stop {
-  bottom: 95px;
-  left: 190px;
-  background: linear-gradient(145deg, #a66ce4, #6938a4);
+
+  bottom:
+    95px;
+
+  left:
+    190px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #a66ce4,
+      #6938a4
+    );
+
 }
+
 
 .coral-stop {
-  bottom: 95px;
-  right: 195px;
-  background: linear-gradient(145deg, #ff7f99, #eb5275);
+
+  bottom:
+    95px;
+
+  right:
+    195px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ff7f99,
+      #eb5275
+    );
+
 }
+
 
 .lagoon-stop {
-  top: 320px;
-  right: 55px;
-  background: linear-gradient(145deg, #2eced0, #119ab5);
+
+  top:
+    320px;
+
+  right:
+    55px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2eced0,
+      #119ab5
+    );
+
 }
 
 
-/* STAMPED STATE */
+
+/* =========================================================
+   STAMPED MAP DESTINATION
+========================================================= */
+
+.map-stop.stamped {
+
+  box-shadow:
+    0 0 0 4px
+    rgba(255,210,57,.42),
+    0 13px 26px
+    rgba(31,63,87,.22);
+
+}
+
 
 .map-stop.stamped .map-stop-tag {
-  background: rgba(255,255,255,.28);
+
+  background:
+    #ffd239;
+
+  color:
+    #5a4300;
+
+  border-color:
+    rgba(255,255,255,.55);
+
 }
 
 
-/* RESPONSIVE */
+
+/* =========================================================
+   MAP RESPONSIVE - TABLET
+========================================================= */
 
 @media (max-width: 1100px) {
 
   .theme-map {
-    min-height: 980px;
+
+    min-height:
+      980px;
+
   }
+
 
   .map-hub {
-    width: 190px;
-    height: 190px;
+
+    width:
+      200px;
+
+    height:
+      195px;
+
   }
+
+
+  .map-terminal {
+
+    width:
+      185px;
+
+  }
+
 
   .map-stop {
-    width: 170px;
+
+    width:
+      170px;
+
   }
+
+
+  .city-zone {
+
+    width:
+      245px;
+
+    left:
+      20px;
+
+  }
+
+
+  .mountain-zone {
+
+    width:
+      245px;
+
+    right:
+      20px;
+
+  }
+
+
+  .rainforest-zone {
+
+    width:
+      225px;
+
+    left:
+      10px;
+
+  }
+
+
+  .lagoon-zone {
+
+    width:
+      225px;
+
+    right:
+      10px;
+
+  }
+
+
+  .amethyst-zone {
+
+    left:
+      45px;
+
+  }
+
+
+  .coral-zone {
+
+    right:
+      45px;
+
+  }
+
 
   .cashline-stop {
-    top: 70px;
-    left: 40px;
+
+    top:
+      70px;
+
+    left:
+      40px;
+
   }
+
 
   .hopes-stop {
-    top: 70px;
-    right: 40px;
+
+    top:
+      70px;
+
+    right:
+      40px;
+
   }
+
 
   .wildheart-stop {
-    top: 280px;
-    left: 20px;
+
+    top:
+      300px;
+
+    left:
+      20px;
+
   }
+
 
   .lagoon-stop {
-    top: 280px;
-    right: 20px;
+
+    top:
+      300px;
+
+    right:
+      20px;
+
   }
+
 
   .amethyst-stop {
-    bottom: 90px;
-    left: 90px;
+
+    bottom:
+      90px;
+
+    left:
+      90px;
+
   }
 
+
   .coral-stop {
-    bottom: 90px;
-    right: 90px;
+
+    bottom:
+      90px;
+
+    right:
+      90px;
+
+  }
+
+
+  .airport-runway {
+
+    width:
+      330px;
+
   }
 
 }
+
+
+
+/* =========================================================
+   MAP RESPONSIVE - PHONE
+========================================================= */
 
 @media (max-width: 760px) {
 
   .theme-map {
-    min-height: auto;
-    padding: 24px;
-    display: grid;
-    gap: 16px;
+
+    min-height:
+      auto;
+
+    padding:
+      20px;
+
+    display:
+      grid;
+
+    gap:
+      16px;
+
+    background:
+      linear-gradient(
+        180deg,
+        #c9edf4,
+        #dff0cc
+      );
+
   }
 
-  .map-path {
-  display: none;
-}
 
-.map-hub,
-.map-stop {
-  position: static;
-  transform: none;
-  width: 100%;
-}
+  .map-path,
+  .map-zone,
+  .map-cloud,
+  .airport-runway {
+
+    display:
+      none;
+
+  }
+
+
+  .map-hub,
+  .map-stop {
+
+    position:
+      static;
+
+    transform:
+      none;
+
+    width:
+      100%;
+
+  }
+
 
   .map-hub {
-    height: auto;
-    border-radius: 28px;
-    padding: 24px;
-    margin-bottom: 8px;
+
+    height:
+      auto;
+
+    margin-bottom:
+      4px;
+
   }
 
+
+  .map-terminal {
+
+    width:
+      100%;
+
+    min-height:
+      145px;
+
+    border-radius:
+      28px;
+
+  }
+
+
+  .you-are-here {
+
+    top:
+      -8px;
+
+  }
+
+
   .map-stop {
-    min-height: 130px;
+
+    min-height:
+      125px;
+
+  }
+
+
+  .map-stop:hover {
+
+    transform:
+      translateY(-3px);
+
   }
 
 }
