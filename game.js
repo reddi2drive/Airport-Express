@@ -620,3 +620,760 @@ function loadDestination(
   refreshTasks();
 
 }
+
+/* =========================================================
+   AIRPORT EXPRESS
+   ISLAND BOARD ENGINE
+========================================================= */
+
+function loadIslandBoard(config) {
+
+  const board =
+    document.getElementById("islandBoard");
+
+  const diceButton =
+    document.getElementById("rollDice");
+
+  const diceFace =
+    document.getElementById("diceFace");
+
+  const boardMessage =
+    document.getElementById("boardMessage");
+
+  const positionText =
+    document.getElementById("positionText");
+
+  const returnButton =
+    document.getElementById("returnAirport");
+
+
+
+  /* =====================================================
+     BOARD PATH
+     7 x 7 board
+     24 spaces around outside
+  ====================================================== */
+
+  const pathPositions = [];
+
+
+  /* TOP */
+
+  for (let col = 1; col <= 7; col++) {
+
+    pathPositions.push({
+      row: 1,
+      col: col
+    });
+
+  }
+
+
+  /* RIGHT */
+
+  for (let row = 2; row <= 7; row++) {
+
+    pathPositions.push({
+      row: row,
+      col: 7
+    });
+
+  }
+
+
+  /* BOTTOM */
+
+  for (let col = 6; col >= 1; col--) {
+
+    pathPositions.push({
+      row: 7,
+      col: col
+    });
+
+  }
+
+
+  /* LEFT */
+
+  for (let row = 6; row >= 2; row--) {
+
+    pathPositions.push({
+      row: row,
+      col: 1
+    });
+
+  }
+
+
+
+  /* =====================================================
+     LOAD GAME PROGRESS
+  ====================================================== */
+
+  let progress =
+    getGameProgress();
+
+
+  if (!progress.boards) {
+
+    progress.boards = {};
+
+  }
+
+
+  if (!progress.boards[config.id]) {
+
+    progress.boards[config.id] = {
+
+      position: 0,
+
+      skipTurn: false,
+
+      completed: false
+
+    };
+
+  }
+
+
+  saveGameProgress(progress);
+
+
+  let state =
+    progress.boards[config.id];
+
+
+  let rolling =
+    false;
+
+
+
+  /* =====================================================
+     CREATE BOARD
+  ====================================================== */
+
+  board.innerHTML = "";
+
+
+
+  pathPositions.forEach(
+    (position, index) => {
+
+      const space =
+        document.createElement("div");
+
+
+      space.className =
+        "board-space";
+
+
+      space.style.gridRow =
+        position.row;
+
+
+      space.style.gridColumn =
+        position.col;
+
+
+      space.dataset.index =
+        index;
+
+
+
+      const spaceData =
+        config.spaces[index] || {
+
+          label:
+            "Travel",
+
+          type:
+            "normal"
+
+        };
+
+
+      space.classList.add(
+        "space-" + spaceData.type
+      );
+
+
+      space.innerHTML = `
+
+        <div class="space-number">
+          ${index + 1}
+        </div>
+
+        <div class="space-icon">
+          ${spaceData.icon || ""}
+        </div>
+
+        <div class="space-label">
+          ${spaceData.label}
+        </div>
+
+      `;
+
+
+      board.appendChild(space);
+
+    }
+  );
+
+
+
+  /* =====================================================
+     CENTRE OF BOARD
+  ====================================================== */
+
+  const boardCentre =
+    document.createElement("div");
+
+
+  boardCentre.className =
+    "board-centre";
+
+
+  boardCentre.innerHTML = `
+
+    <div class="centre-icon">
+      ${config.icon}
+    </div>
+
+    <div class="centre-small">
+      AIRPORT EXPRESS
+    </div>
+
+    <h2>
+      ${config.name}
+    </h2>
+
+    <p>
+      Roll the dice and travel around the island.
+    </p>
+
+  `;
+
+
+  board.appendChild(
+    boardCentre
+  );
+
+
+
+  /* =====================================================
+     PLAYER MARKER
+  ====================================================== */
+
+  const marker =
+    document.createElement("div");
+
+
+  marker.className =
+    "player-marker";
+
+
+  marker.innerHTML =
+    config.marker || "🧳";
+
+
+  board.appendChild(
+    marker
+  );
+
+
+
+  /* =====================================================
+     PLACE MARKER
+  ====================================================== */
+
+  function placeMarker() {
+
+    const position =
+      pathPositions[
+        state.position
+      ];
+
+
+    marker.style.gridRow =
+      position.row;
+
+
+    marker.style.gridColumn =
+      position.col;
+
+
+    positionText.textContent =
+      "Space " +
+      (state.position + 1) +
+      " of " +
+      pathPositions.length;
+
+
+
+    document
+      .querySelectorAll(
+        ".board-space"
+      )
+      .forEach(
+        space => {
+
+          space.classList.remove(
+            "current-space"
+          );
+
+        }
+      );
+
+
+    const active =
+      board.querySelector(
+        '[data-index="' +
+        state.position +
+        '"]'
+      );
+
+
+    if (active) {
+
+      active.classList.add(
+        "current-space"
+      );
+
+    }
+
+  }
+
+
+
+  /* =====================================================
+     SAVE BOARD POSITION
+  ====================================================== */
+
+  function saveBoard() {
+
+    const progress =
+      getGameProgress();
+
+
+    if (!progress.boards) {
+
+      progress.boards = {};
+
+    }
+
+
+    progress.boards[
+      config.id
+    ] = state;
+
+
+    saveGameProgress(
+      progress
+    );
+
+  }
+
+
+
+  /* =====================================================
+     MOVE MARKER ONE SPACE AT A TIME
+  ====================================================== */
+
+  async function moveTo(
+    destination
+  ) {
+
+    destination =
+      Math.min(
+        destination,
+        pathPositions.length - 1
+      );
+
+
+    while (
+      state.position <
+      destination
+    ) {
+
+      state.position++;
+
+      placeMarker();
+
+      saveBoard();
+
+
+      await new Promise(
+        resolve =>
+          setTimeout(
+            resolve,
+            300
+          )
+      );
+
+    }
+
+  }
+
+
+
+  /* =====================================================
+     LANDING EVENT
+  ====================================================== */
+
+  async function landingEvent() {
+
+    const space =
+      config.spaces[
+        state.position
+      ];
+
+
+    if (!space) {
+
+      return;
+
+    }
+
+
+    boardMessage.innerHTML =
+      "<strong>" +
+      space.label +
+      "</strong>" +
+      (
+        space.message
+          ?
+        "<br>" + space.message
+          :
+        ""
+      );
+
+
+
+    /* MOVE FORWARD / BACK */
+
+    if (
+      space.effect &&
+      space.effect.move
+    ) {
+
+      let newPosition =
+        state.position +
+        space.effect.move;
+
+
+      newPosition =
+        Math.max(
+          0,
+          Math.min(
+            newPosition,
+            pathPositions.length - 1
+          )
+        );
+
+
+      if (
+        newPosition >
+        state.position
+      ) {
+
+        await moveTo(
+          newPosition
+        );
+
+      }
+
+      else {
+
+        state.position =
+          newPosition;
+
+        placeMarker();
+
+        saveBoard();
+
+      }
+
+    }
+
+
+
+    /* MISS NEXT TURN */
+
+    if (
+      space.effect &&
+      space.effect.skip
+    ) {
+
+      state.skipTurn =
+        true;
+
+      saveBoard();
+
+    }
+
+
+
+    /* FINISH */
+
+    if (
+      state.position ===
+      pathPositions.length - 1
+    ) {
+
+      finishIsland();
+
+    }
+
+  }
+
+
+
+  /* =====================================================
+     FINISH ISLAND
+  ====================================================== */
+
+  function finishIsland() {
+
+    state.completed =
+      true;
+
+
+    saveBoard();
+
+
+    addStamp(
+      config.id
+    );
+
+
+    diceButton.disabled =
+      true;
+
+
+    boardMessage.innerHTML = `
+
+      🎉
+      <strong>
+        ${config.name} complete!
+      </strong>
+
+      <br>
+
+      Your passport has been stamped.
+
+    `;
+
+
+    returnButton.classList.add(
+      "show"
+    );
+
+  }
+
+
+
+  /* =====================================================
+     DICE
+  ====================================================== */
+
+  const diceCharacters = [
+
+    "",
+
+    "⚀",
+
+    "⚁",
+
+    "⚂",
+
+    "⚃",
+
+    "⚄",
+
+    "⚅"
+
+  ];
+
+
+
+  async function rollDice() {
+
+    if (rolling) {
+
+      return;
+
+    }
+
+
+    if (state.completed) {
+
+      return;
+
+    }
+
+
+
+    /* MISS TURN */
+
+    if (state.skipTurn) {
+
+      state.skipTurn =
+        false;
+
+
+      saveBoard();
+
+
+      boardMessage.innerHTML = `
+
+        ⏳
+        <strong>
+          Miss a turn!
+        </strong>
+
+        <br>
+
+        Your next roll is now available.
+
+      `;
+
+
+      return;
+
+    }
+
+
+
+    rolling =
+      true;
+
+
+    diceButton.disabled =
+      true;
+
+
+    boardMessage.textContent =
+      "Rolling...";
+
+
+
+    /* DICE ANIMATION */
+
+    for (
+      let i = 0;
+      i < 8;
+      i++
+    ) {
+
+      const random =
+        Math.floor(
+          Math.random() * 6
+        ) + 1;
+
+
+      diceFace.textContent =
+        diceCharacters[random];
+
+
+      await new Promise(
+        resolve =>
+          setTimeout(
+            resolve,
+            80
+          )
+      );
+
+    }
+
+
+
+    const roll =
+      Math.floor(
+        Math.random() * 6
+      ) + 1;
+
+
+    diceFace.textContent =
+      diceCharacters[roll];
+
+
+    boardMessage.innerHTML = `
+
+      You rolled
+      <strong>
+        ${roll}
+      </strong>
+
+    `;
+
+
+
+    const destination =
+      state.position +
+      roll;
+
+
+    await moveTo(
+      destination
+    );
+
+
+    await landingEvent();
+
+
+    if (!state.completed) {
+
+      diceButton.disabled =
+        false;
+
+    }
+
+
+    rolling =
+      false;
+
+  }
+
+
+
+  diceButton.addEventListener(
+    "click",
+    rollDice
+  );
+
+
+
+  /* =====================================================
+     INITIAL DISPLAY
+  ====================================================== */
+
+  placeMarker();
+
+
+  if (state.completed) {
+
+    diceButton.disabled =
+      true;
+
+
+    boardMessage.innerHTML = `
+
+      ✅
+      <strong>
+        ${config.name} completed
+      </strong>
+
+      <br>
+
+      Your passport stamp has already been collected.
+
+    `;
+
+
+    returnButton.classList.add(
+      "show"
+    );
+
+  }
+
+}
