@@ -1,0 +1,1494 @@
+/* ================================================
+   AIRPORT EXPRESS
+================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    linear-gradient(
+      180deg,
+      #eef8fc 0%,
+      #f8fbfd 100%
+    );
+
+  color: #17324d;
+
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+/* ================================================
+   TOP BAR
+================================================ */
+
+.topbar {
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding:
+    14px
+    clamp(16px, 4vw, 45px);
+
+  background:
+    rgba(255,255,255,.94);
+
+  backdrop-filter:
+    blur(12px);
+
+  border-bottom:
+    1px solid rgba(0,0,0,.08);
+}
+
+
+.brand {
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 20px;
+
+  font-weight: 900;
+}
+
+
+.brand small {
+
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 10px;
+
+  letter-spacing: .15em;
+
+  color: #788b9b;
+}
+
+
+.brand-plane {
+
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2cb8dd,
+      #087da8
+    );
+
+  color: white;
+
+  font-size: 25px;
+
+  transform:
+    rotate(-8deg);
+}
+
+
+.top-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.passport-counter {
+
+  padding:
+    10px
+    15px;
+
+  border-radius: 999px;
+
+  background:
+    #edf7fb;
+
+  font-weight: 800;
+}
+
+
+.reset-button {
+
+  border: none;
+
+  padding:
+    10px
+    15px;
+
+  border-radius: 999px;
+
+  background:
+    #ffedef;
+
+  color:
+    #a42935;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+
+/* ================================================
+   MAIN PAGE
+================================================ */
+
+.page {
+
+  width:
+    min(
+      1180px,
+      calc(100% - 28px)
+    );
+
+  margin:
+    30px auto 70px;
+}
+
+
+
+/* ================================================
+   AIRPORT HERO
+================================================ */
+
+.airport-hero {
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns:
+    1.3fr
+    .7fr;
+
+  gap: 30px;
+
+  align-items: center;
+
+  min-height: 340px;
+
+  padding:
+    clamp(
+      28px,
+      5vw,
+      60px
+    );
+
+  border-radius:
+    32px;
+
+  color:
+    white;
+
+  background:
+
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(255,255,255,.18),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      135deg,
+      #087aa9,
+      #2bb9dd
+    );
+
+  box-shadow:
+    0 25px 60px
+    rgba(12,92,127,.22);
+}
+
+
+.airport-hero::after {
+
+  content:
+    "✈";
+
+  position:
+    absolute;
+
+  right:
+    -40px;
+
+  bottom:
+    -120px;
+
+  font-size:
+    330px;
+
+  color:
+    rgba(255,255,255,.08);
+
+  transform:
+    rotate(-15deg);
+}
+
+
+.airport-content {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+}
+
+
+.eyebrow {
+
+  font-size:
+    12px;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    .18em;
+
+  margin-bottom:
+    10px;
+}
+
+
+.eyebrow.dark {
+
+  color:
+    #2185a8;
+}
+
+
+.airport-content h1 {
+
+  margin:
+    0 0 18px;
+
+  font-size:
+    clamp(
+      42px,
+      7vw,
+      78px
+    );
+
+  line-height:
+    .95;
+
+  letter-spacing:
+    -.06em;
+}
+
+
+.airport-content p {
+
+  max-width:
+    650px;
+
+  margin:
+    0;
+
+  font-size:
+    18px;
+
+  line-height:
+    1.6;
+
+  color:
+    rgba(255,255,255,.9);
+}
+
+
+
+/* ================================================
+   PASSPORT PROGRESS
+================================================ */
+
+.passport-progress {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  padding:
+    22px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.25);
+
+  border-radius:
+    24px;
+
+  background:
+    rgba(255,255,255,.13);
+
+  backdrop-filter:
+    blur(12px);
+}
+
+
+.progress-heading {
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  margin-bottom:
+    12px;
+
+  font-weight:
+    800;
+}
+
+
+.progress-track {
+
+  width:
+    100%;
+
+  height:
+    12px;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(255,255,255,.2);
+}
+
+
+.progress-fill {
+
+  height:
+    100%;
+
+  width:
+    0;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffd350,
+      #fff1a2
+    );
+
+  transition:
+    width .4s ease;
+}
+
+
+.mini-stamps {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    8px;
+
+  margin-top:
+    18px;
+}
+
+
+.mini-stamp {
+
+  aspect-ratio:
+    1;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    2px dashed
+    rgba(255,255,255,.3);
+
+  border-radius:
+    16px;
+
+  font-size:
+    28px;
+
+  opacity:
+    .3;
+}
+
+
+.mini-stamp.earned {
+
+  opacity:
+    1;
+
+  border-style:
+    solid;
+
+  background:
+    rgba(255,255,255,.15);
+}
+
+
+
+/* ================================================
+   DESTINATIONS
+================================================ */
+
+.destination-section {
+
+  margin-top:
+    50px;
+}
+
+
+.section-heading {
+
+  margin-bottom:
+    20px;
+}
+
+
+.section-heading h2 {
+
+  margin:
+    3px 0 7px;
+
+  font-size:
+    clamp(
+      30px,
+      5vw,
+      44px
+    );
+
+  letter-spacing:
+    -.045em;
+}
+
+
+.section-heading p {
+
+  margin:
+    0;
+
+  color:
+    #718598;
+}
+
+
+.destination-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    18px;
+}
+
+
+.destination {
+
+  position:
+    relative;
+
+  min-height:
+    260px;
+
+  overflow:
+    hidden;
+
+  padding:
+    22px;
+
+  border-radius:
+    26px;
+
+  color:
+    white;
+
+  box-shadow:
+    0 18px 38px
+    rgba(29,66,91,.13);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+
+.destination:hover {
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 25px 45px
+    rgba(29,66,91,.2);
+}
+
+
+.destination::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    230px;
+
+  height:
+    230px;
+
+  border-radius:
+    50%;
+
+  right:
+    -70px;
+
+  bottom:
+    -100px;
+
+  background:
+    rgba(255,255,255,.11);
+}
+
+
+.destination-icon {
+
+  position:
+    absolute;
+
+  top:
+    20px;
+
+  left:
+    20px;
+
+  font-size:
+    40px;
+}
+
+
+.destination-status {
+
+  position:
+    absolute;
+
+  top:
+    20px;
+
+  right:
+    20px;
+
+  padding:
+    8px
+    11px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.26);
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(255,255,255,.15);
+
+  font-size:
+    11px;
+
+  font-weight:
+    900;
+}
+
+
+.destination-content {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  margin-top:
+    95px;
+}
+
+
+.destination h3 {
+
+  margin:
+    0 0 8px;
+
+  font-size:
+    27px;
+
+  letter-spacing:
+    -.04em;
+}
+
+
+.destination p {
+
+  margin:
+    0 0 18px;
+
+  max-width:
+    90%;
+
+  color:
+    rgba(255,255,255,.88);
+
+  line-height:
+    1.45;
+}
+
+
+.travel-button {
+
+  display:
+    inline-block;
+
+  font-size:
+    13px;
+
+  font-weight:
+    900;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .08em;
+}
+
+
+.cashline {
+
+  background:
+    linear-gradient(
+      145deg,
+      #895be0,
+      #5135aa
+    );
+}
+
+
+.hopes {
+
+  background:
+    linear-gradient(
+      145deg,
+      #48aee1,
+      #3257b6
+    );
+}
+
+
+.wildheart {
+
+  background:
+    linear-gradient(
+      145deg,
+      #43bf73,
+      #16714c
+    );
+}
+
+
+.amethyst {
+
+  background:
+    linear-gradient(
+      145deg,
+      #a061df,
+      #58348c
+    );
+}
+
+
+.coral {
+
+  background:
+    linear-gradient(
+      145deg,
+      #ff8791,
+      #d94368
+    );
+}
+
+
+.lagoon {
+
+  background:
+    linear-gradient(
+      145deg,
+      #2bc8c3,
+      #0989a7
+    );
+}
+
+
+
+/* ================================================
+   PASSPORT
+================================================ */
+
+.passport-section {
+
+  margin-top:
+    30px;
+
+  padding:
+    30px;
+
+  border:
+    1px solid
+    #dce8ef;
+
+  border-radius:
+    28px;
+
+  background:
+    white;
+
+  box-shadow:
+    0 18px 45px
+    rgba(30,66,91,.09);
+}
+
+
+.passport-section h2 {
+
+  margin:
+    4px 0 5px;
+
+  font-size:
+    36px;
+}
+
+
+.passport-section > p {
+
+  margin:
+    0 0 24px;
+
+  color:
+    #718598;
+}
+
+
+.passport-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(6,1fr);
+
+  gap:
+    12px;
+}
+
+
+.passport-stamp {
+
+  min-height:
+    135px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    10px;
+
+  padding:
+    12px;
+
+  text-align:
+    center;
+
+  border:
+    2px dashed
+    #ccdce6;
+
+  border-radius:
+    20px;
+
+  color:
+    #9badb8;
+
+  background:
+    #fbfdfe;
+}
+
+
+.passport-stamp .stamp-icon {
+
+  font-size:
+    38px;
+
+  filter:
+    grayscale(1);
+
+  opacity:
+    .3;
+}
+
+
+.passport-stamp strong {
+
+  font-size:
+    12px;
+}
+
+
+.passport-stamp.earned {
+
+  border-style:
+    solid;
+
+  color:
+    #17324d;
+
+  background:
+    #f1faf6;
+}
+
+
+.passport-stamp.earned .stamp-icon {
+
+  filter:
+    none;
+
+  opacity:
+    1;
+}
+
+
+.final-message {
+
+  margin-top:
+    20px;
+
+  padding:
+    16px;
+
+  border-radius:
+    16px;
+
+  background:
+    #edf7fb;
+
+  color:
+    #527083;
+
+  text-align:
+    center;
+
+  font-weight:
+    700;
+}
+
+
+
+/* ================================================
+   ISLAND PAGE
+================================================ */
+
+.island-page {
+
+  background:
+    #eff7fb;
+}
+
+
+.island-hero {
+
+  min-height:
+    390px;
+
+  padding:
+    35px;
+
+  display:
+    flex;
+
+  align-items:
+    flex-end;
+
+  color:
+    white;
+
+  border-radius:
+    0 0 36px 36px;
+}
+
+
+.island-inner {
+
+  width:
+    min(
+      1000px,
+      100%
+    );
+
+  margin:
+    auto;
+}
+
+
+.back-airport {
+
+  display:
+    inline-block;
+
+  margin-bottom:
+    80px;
+
+  color:
+    white;
+
+  font-weight:
+    800;
+}
+
+
+.island-hero h1 {
+
+  margin:
+    5px 0 12px;
+
+  font-size:
+    clamp(
+      45px,
+      8vw,
+      85px
+    );
+
+  line-height:
+    .95;
+
+  letter-spacing:
+    -.06em;
+}
+
+
+.island-hero p {
+
+  max-width:
+    650px;
+
+  margin:
+    0;
+
+  color:
+    rgba(255,255,255,.9);
+
+  font-size:
+    17px;
+
+  line-height:
+    1.6;
+}
+
+
+.island-main {
+
+  width:
+    min(
+      1000px,
+      calc(100% - 28px)
+    );
+
+  margin:
+    30px auto 70px;
+}
+
+
+.mission-layout {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1.4fr
+    .6fr;
+
+  gap:
+    20px;
+}
+
+
+.game-card {
+
+  padding:
+    26px;
+
+  border:
+    1px solid
+    #dce8ef;
+
+  border-radius:
+    26px;
+
+  background:
+    white;
+
+  box-shadow:
+    0 15px 35px
+    rgba(26,65,90,.09);
+}
+
+
+.game-card h2 {
+
+  margin:
+    0 0 8px;
+
+  font-size:
+    30px;
+}
+
+
+.game-card > p {
+
+  margin:
+    0;
+
+  color:
+    #718598;
+
+  line-height:
+    1.6;
+}
+
+
+.task-list {
+
+  display:
+    grid;
+
+  gap:
+    12px;
+
+  margin-top:
+    22px;
+}
+
+
+.task {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  padding:
+    16px;
+
+  border:
+    1px solid
+    #dce8ef;
+
+  border-radius:
+    18px;
+
+  background:
+    #fbfdfe;
+}
+
+
+.task-number {
+
+  flex:
+    0 0 auto;
+
+  width:
+    44px;
+
+  height:
+    44px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    14px;
+
+  background:
+    #eaf6fb;
+
+  color:
+    #137fa8;
+
+  font-weight:
+    900;
+}
+
+
+.task-text {
+
+  flex:
+    1;
+}
+
+
+.task-text strong {
+
+  display:
+    block;
+
+  margin-bottom:
+    4px;
+}
+
+
+.task-text span {
+
+  color:
+    #718598;
+
+  font-size:
+    14px;
+}
+
+
+.task button {
+
+  border:
+    none;
+
+  border-radius:
+    12px;
+
+  padding:
+    10px
+    13px;
+
+  background:
+    #edf3f6;
+
+  color:
+    #506b7c;
+
+  font-weight:
+    800;
+
+  cursor:
+    pointer;
+}
+
+
+.task.done {
+
+  background:
+    #eefaf3;
+
+  border-color:
+    #bfe4cd;
+}
+
+
+.task.done button {
+
+  background:
+    #d8f3e3;
+
+  color:
+    #1b7842;
+}
+
+
+.big-stamp {
+
+  text-align:
+    center;
+
+  font-size:
+    85px;
+
+  margin:
+    10px 0;
+}
+
+
+.stamp-card-title {
+
+  text-align:
+    center;
+
+  font-size:
+    22px;
+}
+
+
+.stamp-card-copy {
+
+  text-align:
+    center;
+
+  color:
+    #718598;
+
+  line-height:
+    1.5;
+}
+
+
+.claim-button {
+
+  width:
+    100%;
+
+  padding:
+    15px;
+
+  border:
+    none;
+
+  border-radius:
+    16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd24e,
+      #ffe986
+    );
+
+  color:
+    #5c4710;
+
+  font-weight:
+    900;
+
+  cursor:
+    pointer;
+}
+
+
+.claim-button:disabled {
+
+  opacity:
+    .4;
+
+  cursor:
+    not-allowed;
+}
+
+
+.status-message {
+
+  margin-top:
+    12px;
+
+  padding:
+    13px;
+
+  border-radius:
+    14px;
+
+  background:
+    #f1f5f7;
+
+  color:
+    #6f8390;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.5;
+}
+
+
+.status-message.success {
+
+  background:
+    #e6f8ed;
+
+  color:
+    #207340;
+}
+
+
+.return-button {
+
+  display:
+    block;
+
+  margin-top:
+    12px;
+
+  padding:
+    14px;
+
+  border-radius:
+    15px;
+
+  background:
+    #0c88b7;
+
+  color:
+    white;
+
+  text-align:
+    center;
+
+  font-weight:
+    900;
+}
+
+
+
+/* ================================================
+   RESPONSIVE
+================================================ */
+
+@media
+(max-width: 900px) {
+
+  .airport-hero {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .destination-grid {
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+
+  .passport-grid {
+
+    grid-template-columns:
+      repeat(3,1fr);
+  }
+
+
+  .mission-layout {
+
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+
+@media
+(max-width: 600px) {
+
+  .topbar {
+
+    align-items:
+      flex-start;
+  }
+
+
+  .passport-counter {
+
+    display:
+      none;
+  }
+
+
+  .destination-grid {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .passport-grid {
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+
+  .airport-content h1 {
+
+    font-size:
+      44px;
+  }
+
+}
