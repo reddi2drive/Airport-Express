@@ -4412,7 +4412,7 @@ body.hopes-theme {
   ====================================================== */
 
   --hopes-bg-image:
-    none;
+  url("images/hopes-peak-background.png");
 
 
   background:
