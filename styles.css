@@ -3234,7 +3234,13 @@ body.cashline-theme {
 .cashline-stop {
   top: 80px;
   left: 90px;
-  background: linear-gradient(145deg, #9e57df, #6334b0);
+
+  background:
+    linear-gradient(
+      145deg,
+      #ef3c49,
+      #a91825
+    );
 }
 
 .hopes-stop {
@@ -3333,13 +3339,16 @@ body.cashline-theme {
     gap: 16px;
   }
 
-  .map-path,
-  .map-hub,
-  .map-stop {
-    position: static;
-    transform: none;
-    width: 100%;
-  }
+  .map-path {
+  display: none;
+}
+
+.map-hub,
+.map-stop {
+  position: static;
+  transform: none;
+  width: 100%;
+}
 
   .map-hub {
     height: auto;
