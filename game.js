@@ -766,7 +766,7 @@ function loadIslandBoard(config) {
 
 
 
-  /* =====================================================
+ /* =====================================================
    BOARD PATH
    Supports different board sizes
 ====================================================== */
@@ -780,7 +780,7 @@ const boardSize =
   7;
 
 
-/* Set visual grid size */
+/* SET GRID SIZE */
 
 board.style.gridTemplateColumns =
   `repeat(${boardSize}, 1fr)`;
@@ -792,7 +792,9 @@ board.style.gridTemplateRows =
 const pathPositions = [];
 
 
-/* TOP */
+/* =====================================================
+   TOP
+====================================================== */
 
 for (
   let col = 1;
@@ -813,7 +815,9 @@ for (
 }
 
 
-/* RIGHT */
+/* =====================================================
+   RIGHT
+====================================================== */
 
 for (
   let row = 2;
@@ -834,7 +838,9 @@ for (
 }
 
 
-/* BOTTOM */
+/* =====================================================
+   BOTTOM
+====================================================== */
 
 for (
   let col = boardSize - 1;
@@ -855,7 +861,9 @@ for (
 }
 
 
-/* LEFT */
+/* =====================================================
+   LEFT
+====================================================== */
 
 for (
   let row = boardSize - 1;
@@ -874,42 +882,6 @@ for (
   });
 
 }
-
-
-  /* RIGHT */
-
-  for (let row = 2; row <= 7; row++) {
-
-    pathPositions.push({
-      row: row,
-      col: 7
-    });
-
-  }
-
-
-  /* BOTTOM */
-
-  for (let col = 6; col >= 1; col--) {
-
-    pathPositions.push({
-      row: 7,
-      col: col
-    });
-
-  }
-
-
-  /* LEFT */
-
-  for (let row = 6; row >= 2; row--) {
-
-    pathPositions.push({
-      row: row,
-      col: 1
-    });
-
-  }
 
 
 
