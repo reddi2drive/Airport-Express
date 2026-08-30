@@ -900,107 +900,111 @@ function loadIslandBoard(config) {
 
 
   /* =====================================================
-     PROPERTY ACTION
-  ====================================================== */
+   PROPERTY ACTION
+===================================================== */
 
-  function renderPropertyAction(
-    space
+function renderPropertyAction(
+  space
+) {
+
+  activeProperty =
+    null;
+
+
+  propertyButton.hidden =
+    true;
+
+
+  propertyButton.disabled =
+    false;
+
+
+  if (
+    !space ||
+    !space.property
   ) {
 
-    activeProperty =
-      null;
+    return;
+
+  }
 
 
-    propertyButton.hidden =
+  const progress =
+    getGameProgress();
+
+
+  const key =
+    getPropertyKey(
+      space
+    );
+
+
+  const owned =
+    progress.properties[
+      key
+    ];
+
+
+  if (owned) {
+
+    boardMessage.innerHTML += `
+
+      <div class="property-owned">
+
+        🏠 You own
+        <strong>
+          ${space.label}
+        </strong>
+
+      </div>
+
+    `;
+
+
+    return;
+
+  }
+
+
+  activeProperty =
+    space;
+
+
+  const price =
+    space.property.price;
+
+
+  propertyButton.hidden =
+    false;
+
+
+  if (
+    progress.cash < price
+  ) {
+
+    propertyButton.disabled =
       true;
 
 
-    propertyButton.disabled =
-      false;
-
-
-    if (
-      !space ||
-      !space.property
-    ) {
-
-      return;
-
-    }
-
-
-    const progress =
-      getGameProgress();
-
-
-    const key =
-      getPropertyKey(space);
-
-
-    const owned =
-      progress.properties[key];
-
-
-    if (owned) {
-
-      boardMessage.innerHTML += `
-
-        <div class="property-owned">
-
-          🏠 You own
-          <strong>
-            ${space.label}
-          </strong>
-
-        </div>
-
-      `;
-
-
-      return;
-
-    }
-
-
-    activeProperty =
-      space;
-
-
-    const price =
-      space.property.price;
-
-
-    propertyButton.hidden =
-      false;
-
-
-    if (
-      progress.cash < price
-    ) {
-
-      propertyButton.disabled =
-        true;
-
-
-      propertyButton.textContent =
-        "Need $" +
-        price +
-        " to buy " +
-        space.label;
-
-    }
-
-    else {
-
-      propertyButton.textContent =
-        "🏙️ Buy " +
-        space.label +
-        " for $" +
-        price;
-
-    }
+    propertyButton.textContent =
+      "Need $" +
+      price +
+      " to buy " +
+      space.label;
 
   }
+
+  else {
+
+    propertyButton.textContent =
+      "🏙️ Buy " +
+      space.label +
+      " for $" +
+      price;
+
+  }
+
+}
 
 
 
@@ -1526,11 +1530,20 @@ function loadIslandBoard(config) {
       saveBoard();
 
     }
-    /* PROPERTY */
+   /* =================================================
+   PROPERTY
+   Check the square the player is NOW standing on
+================================================= */
 
-    renderPropertyAction(
-      space
-    );
+const finalSpace =
+  config.spaces[
+    state.position
+  ];
+
+
+renderPropertyAction(
+  finalSpace
+);
 
 
     /* FINISH */
@@ -1665,15 +1678,27 @@ function loadIslandBoard(config) {
 
 
     rolling =
-      true;
+  true;
 
 
-    diceButton.disabled =
-      true;
+diceButton.disabled =
+  true;
 
 
-    boardMessage.textContent =
-      "Rolling...";
+/* Clear previous property action */
+
+activeProperty =
+  null;
+
+propertyButton.hidden =
+  true;
+
+propertyButton.disabled =
+  false;
+
+
+boardMessage.textContent =
+  "Rolling...";
 
 
 
