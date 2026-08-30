@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Hope's Peak Mountain | Airport Express
+</title>
+
+<link
+  rel="stylesheet"
+  href="../styles.css?v=12"
+>
+
+</head>
+
+
+<body class="board-page hopes-theme">
+
+
+<main class="board-shell">
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="board-header">
+
+  <a
+    href="../index.html"
+    class="board-back"
+  >
+    ← Airport Express
+  </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     GAME
+====================================================== -->
+
+<div class="board-game-layout">
+
+
+<!-- BOARD -->
+
+<div
+  class="island-board"
+  id="islandBoard"
+></div>
+
+
+
+<!-- DICE -->
+
+<aside class="dice-panel">
+
+
+<h2>
+Your Turn
+</h2>
+
+
+<div
+  class="dice-face"
+  id="diceFace"
+>
+⚀
+</div>
+
+
+<button
+  type="button"
+  class="roll-dice"
+  id="rollDice"
+>
+🎲 Roll Dice
+</button>
+
+
+<div
+  class="position-text"
+  id="positionText"
+>
+Space 1 of 16
+</div>
+
+
+<div
+  class="board-message"
+  id="boardMessage"
+>
+Roll the dice to begin your Hope's Peak Mountain adventure.
+</div>
+
+
+<a
+  href="../index.html"
+  class="board-return"
+  id="returnAirport"
+>
+✈ Return to Airport
+</a>
+
+
+</aside>
+
+
+</div>
+
+
+</main>
+
+
+
+<script src="../game.js?v=12"></script>
+
+
+<script>
+
+/* =====================================================
+   HOPE'S PEAK MOUNTAIN BOARD
+====================================================== */
+
+loadIslandBoard({
+
+  id:
+    "hopes",
+
+  name:
+    "Hope's Peak Mountain",
+
+  icon:
+    "🏔️",
+
+  marker:
+    "🧳",
+
+  boardSize:
+    5,
+
+
+  spaces: [
+
+
+    /* 1 */
+
+    {
+
+      label:
+        "Mountain Arrival",
+
+      icon:
+        "✈️",
+
+      type:
+        "start",
+
+      message:
+        "Welcome to Hope's Peak Mountain!"
+
+    },
+
+
+    /* 2 */
+
+    {
+
+      label:
+        "Ski Hire -$20",
+
+      icon:
+        "🎿",
+
+      type:
+        "event",
+
+      message:
+        "You hire your mountain equipment.",
+
+      effect: {
+
+        money:
+          -20
+
+      }
+
+    },
+
+
+    /* 3 */
+
+    {
+
+      label:
+        "Chairlift",
+
+      icon:
+        "🚡",
+
+      type:
+        "travel",
+
+      message:
+        "The chairlift takes you two spaces higher.",
+
+      effect: {
+
+        move:
+          2
+
+      }
+
+    },
+
+
+    /* 4 */
+
+    {
+
+      label:
+        "Alpine Café",
+
+      icon:
+        "☕",
+
+      type:
+        "property",
+
+      message:
+        "The Alpine Café is available to purchase.",
+
+      property: {
+
+        id:
+          "alpine-cafe",
+
+        price:
+          70,
+
+        rent:
+          15
+
+      }
+
+    },
+
+
+    /* 5 */
+
+    {
+
+      label:
+        "Heavy Snow",
+
+      icon:
+        "🌨️",
+
+      type:
+        "event",
+
+      message:
+        "Heavy snow is falling across the mountain."
+
+    },
+
+
+    /* 6 */
+
+    {
+
+      label:
+        "Trail Bonus +$30",
+
+      icon:
+        "💵",
+
+      type:
+        "good",
+
+      message:
+        "You completed a mountain trail challenge.",
+
+      effect: {
+
+        money:
+          30
+
+      }
+
+    },
+
+
+    /* 7 */
+
+    {
+
+      label:
+        "Avalanche!",
+
+      icon:
+        "🌨️",
+
+      type:
+        "bad",
+
+      message:
+        "An avalanche blocks the path. Move back two spaces.",
+
+      effect: {
+
+        move:
+          -2
+
+      }
+
+    },
+
+
+    /* 8 */
+
+    {
+
+      label:
+        "Mountain Lodge",
+
+      icon:
+        "🏠",
+
+      type:
+        "property",
+
+      message:
+        "The Mountain Lodge is available to purchase.",
+
+      property: {
+
+        id:
+          "mountain-lodge",
+
+        price:
+          90,
+
+        rent:
+          20
+
+      }
+
+    },
+
+
+    /* 9 */
+
+    {
+
+      label:
+        "Snowstorm",
+
+      icon:
+        "❄️",
+
+      type:
+        "bad",
+
+      message:
+        "The snowstorm stops you travelling. Miss your next turn.",
+
+      effect: {
+
+        skip:
+          true
+
+      }
+
+    },
+
+
+    /* 10 */
+
+    {
+
+      label:
+        "Hot Chocolate -$10",
+
+      icon:
+        "☕",
+
+      type:
+        "event",
+
+      message:
+        "Warm up with a hot chocolate.",
+
+      effect: {
+
+        money:
+          -10
+
+      }
+
+    },
+
+
+    /* 11 */
+
+    {
+
+      label:
+        "Scenic Lookout",
+
+      icon:
+        "🔭",
+
+      type:
+        "event",
+
+      message:
+        "Take in the incredible mountain view."
+
+    },
+
+
+    /* 12 */
+
+    {
+
+      label:
+        "Ski Race +$60",
+
+      icon:
+        "🏆",
+
+      type:
+        "good",
+
+      message:
+        "You win the Hope's Peak ski race!",
+
+      effect: {
+
+        money:
+          60
+
+      }
+
+    },
+
+
+    /* 13 */
+
+    {
+
+      label:
+        "Cable Car",
+
+      icon:
+        "🚠",
+
+      type:
+        "travel",
+
+      message:
+        "The cable car carries you two spaces towards the summit.",
+
+      effect: {
+
+        move:
+          2
+
+      }
+
+    },
+
+
+    /* 14 */
+
+    {
+
+      label:
+        "Summit Shop",
+
+      icon:
+        "🏪",
+
+      type:
+        "property",
+
+      message:
+        "The Summit Shop is available to purchase.",
+
+      property: {
+
+        id:
+          "summit-shop",
+
+        price:
+          110,
+
+        rent:
+          25
+
+      }
+
+    },
+
+
+    /* 15 */
+
+    {
+
+      label:
+        "Final Ascent",
+
+      icon:
+        "🥾",
+
+      type:
+        "event",
+
+      message:
+        "One final climb before reaching the summit!"
+
+    },
+
+
+    /* 16 */
+
+    {
+
+      label:
+        "Summit Passport",
+
+      icon:
+        "🛂",
+
+      type:
+        "finish",
+
+      message:
+        "Hope's Peak Mountain complete!"
+
+    }
+
+
+  ]
+
+});
+
+</script>
+
+
+</body>
+
+</html>
