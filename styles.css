@@ -2230,3 +2230,417 @@ a {
   }
 
 }
+/* =========================================================
+   CASHLINE CITY
+   RED THEME
+========================================================= */
+
+.cashline-theme {
+
+  --cash-red:
+    #d92735;
+
+  --cash-red-dark:
+    #981923;
+
+  --cash-red-deep:
+    #69131a;
+
+  --cash-red-light:
+    #fff0f1;
+
+  --cash-gold:
+    #ffd05a;
+
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.cashline-theme {
+
+  background:
+
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(217,39,53,.10),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      180deg,
+      #fff7f7,
+      #f8f3f3
+    );
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.cashline-theme
+.board-back {
+
+  color:
+    var(--cash-red);
+
+}
+
+
+.cashline-theme
+.eyebrow.dark {
+
+  color:
+    var(--cash-red);
+
+}
+
+
+.cashline-theme
+.board-header h1 {
+
+  color:
+    var(--cash-red-dark);
+
+}
+
+
+/* =========================================================
+   BOARD
+========================================================= */
+
+.cashline-theme
+.island-board {
+
+  border:
+    3px solid
+    rgba(217,39,53,.18);
+
+  background:
+    #fffafa;
+
+  box-shadow:
+    0 22px 55px
+    rgba(145,24,34,.18);
+
+}
+
+
+/* =========================================================
+   CENTRE
+========================================================= */
+
+.cashline-theme
+.board-centre {
+
+  background:
+
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(255,255,255,.20),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      145deg,
+      #ef3d49,
+      #b91e2b 55%,
+      #7f151e
+    );
+
+  border:
+    3px solid
+    rgba(255,255,255,.15);
+
+}
+
+
+/* =========================================================
+   PLAYER POSITION
+========================================================= */
+
+.cashline-theme
+.current-space {
+
+  outline:
+    4px solid
+    var(--cash-red);
+
+  outline-offset:
+    -4px;
+
+}
+
+
+/* =========================================================
+   STANDARD SPACES
+========================================================= */
+
+.cashline-theme
+.board-space {
+
+  border-color:
+    rgba(126,32,39,.15);
+
+}
+
+
+/* START */
+
+.cashline-theme
+.space-start {
+
+  background:
+    #ffe5e7;
+
+  border-color:
+    #e3646e;
+
+}
+
+
+/* GOOD */
+
+.cashline-theme
+.space-good {
+
+  background:
+    #fff4d7;
+
+  border-color:
+    #edc04e;
+
+}
+
+
+/* BAD */
+
+.cashline-theme
+.space-bad {
+
+  background:
+    #ffd9dc;
+
+  border-color:
+    #e35b66;
+
+}
+
+
+/* EVENT */
+
+.cashline-theme
+.space-event {
+
+  background:
+    #fff0f1;
+
+  border-color:
+    #e59298;
+
+}
+
+
+/* TRAVEL */
+
+.cashline-theme
+.space-travel {
+
+  background:
+    #ffe7e9;
+
+  border-color:
+    #ca4550;
+
+}
+
+
+/* NORMAL */
+
+.cashline-theme
+.space-normal {
+
+  background:
+    #fffafa;
+
+}
+
+
+/* FINISH */
+
+.cashline-theme
+.space-finish {
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #ffd866,
+      #ffbf36
+    );
+
+  border:
+    3px solid
+    #a51d28;
+
+  color:
+    #6e151c;
+
+}
+
+
+/* =========================================================
+   PLAYER MARKER
+========================================================= */
+
+.cashline-theme
+.player-marker {
+
+  border:
+    3px solid
+    var(--cash-red);
+
+  background:
+    white;
+
+  box-shadow:
+    0 5px 18px
+    rgba(132,18,28,.35);
+
+}
+
+
+/* =========================================================
+   DICE PANEL
+========================================================= */
+
+.cashline-theme
+.dice-panel {
+
+  border:
+    2px solid
+    rgba(217,39,53,.14);
+
+  box-shadow:
+    0 18px 45px
+    rgba(131,24,32,.14);
+
+}
+
+
+.cashline-theme
+.dice-panel h2 {
+
+  color:
+    var(--cash-red-dark);
+
+}
+
+
+.cashline-theme
+.dice-face {
+
+  color:
+    var(--cash-red-dark);
+
+}
+
+
+/* =========================================================
+   ROLL BUTTON
+========================================================= */
+
+.cashline-theme
+.roll-dice {
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #ef3f4b,
+      #c7212d 60%,
+      #981923
+    );
+
+  box-shadow:
+    0 10px 24px
+    rgba(184,30,42,.28);
+
+}
+
+
+.cashline-theme
+.roll-dice:hover {
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #fa4b57,
+      #d52633 60%,
+      #a51c27
+    );
+
+}
+
+
+/* =========================================================
+   POSITION
+========================================================= */
+
+.cashline-theme
+.position-text {
+
+  color:
+    #9b555a;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.cashline-theme
+.board-message {
+
+  background:
+    #fff0f1;
+
+  color:
+    #76252c;
+
+  border:
+    1px solid
+    rgba(217,39,53,.14);
+
+}
+
+
+/* =========================================================
+   RETURN TO AIRPORT
+========================================================= */
+
+.cashline-theme
+.board-return {
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #ffd75e,
+      #ffbd32
+    );
+
+  color:
+    #68131a;
+
+  box-shadow:
+    0 8px 20px
+    rgba(191,135,20,.22);
+
+}
