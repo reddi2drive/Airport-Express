@@ -52,6 +52,21 @@ const AIRPORT_EXPRESS = {
 
 function getGameProgress() {
 
+  const defaults = {
+
+    stamps: [],
+
+    tasks: {},
+
+    boards: {},
+
+    cash: 500,
+
+    properties: {}
+
+  };
+
+
   const saved =
     localStorage.getItem(
       AIRPORT_EXPRESS.storageKey
@@ -60,32 +75,80 @@ function getGameProgress() {
 
   if (!saved) {
 
-    return {
-
-      stamps: [],
-
-      tasks: {}
-
-    };
+    return defaults;
 
   }
 
 
   try {
 
-    return JSON.parse(saved);
+    const parsed =
+      JSON.parse(saved);
+
+
+    const progress = {
+
+      ...defaults,
+
+      ...parsed
+
+    };
+
+
+    if (!Array.isArray(progress.stamps)) {
+
+      progress.stamps = [];
+
+    }
+
+
+    if (
+      !progress.tasks ||
+      typeof progress.tasks !== "object"
+    ) {
+
+      progress.tasks = {};
+
+    }
+
+
+    if (
+      !progress.boards ||
+      typeof progress.boards !== "object"
+    ) {
+
+      progress.boards = {};
+
+    }
+
+
+    if (
+      !Number.isFinite(progress.cash)
+    ) {
+
+      progress.cash = 500;
+
+    }
+
+
+    if (
+      !progress.properties ||
+      typeof progress.properties !== "object" ||
+      Array.isArray(progress.properties)
+    ) {
+
+      progress.properties = {};
+
+    }
+
+
+    return progress;
 
   }
 
   catch {
 
-    return {
-
-      stamps: [],
-
-      tasks: {}
-
-    };
+    return defaults;
 
   }
 
@@ -645,6 +708,59 @@ function loadIslandBoard(config) {
 
   const returnButton =
     document.getElementById("returnAirport");
+     const dicePanel =
+    diceButton.closest(
+      ".dice-panel"
+    );
+
+
+  /* =====================================================
+     PLAYER WALLET
+  ====================================================== */
+
+  const wallet =
+    document.createElement("div");
+
+
+  wallet.className =
+    "player-wallet";
+
+
+  dicePanel.insertBefore(
+    wallet,
+    diceFace
+  );
+
+
+
+  /* =====================================================
+     PROPERTY BUY BUTTON
+  ====================================================== */
+
+  const propertyButton =
+    document.createElement("button");
+
+
+  propertyButton.type =
+    "button";
+
+
+  propertyButton.className =
+    "property-buy-button";
+
+
+  propertyButton.hidden =
+    true;
+
+
+  boardMessage.insertAdjacentElement(
+    "afterend",
+    propertyButton
+  );
+
+
+  let activeProperty =
+    null;
 
 
 
@@ -745,6 +861,256 @@ function loadIslandBoard(config) {
 
   let rolling =
     false;
+     /* =====================================================
+     WALLET
+  ====================================================== */
+
+  function renderWallet() {
+
+    const progress =
+      getGameProgress();
+
+
+    wallet.textContent =
+      "💵 Cash: $" +
+      progress.cash;
+
+  }
+
+
+
+  /* =====================================================
+     PROPERTY ID
+  ====================================================== */
+
+  function getPropertyKey(
+    space
+  ) {
+
+    return (
+      config.id +
+      ":" +
+      space.property.id
+    );
+
+  }
+
+
+
+  /* =====================================================
+     PROPERTY ACTION
+  ====================================================== */
+
+  function renderPropertyAction(
+    space
+  ) {
+
+    activeProperty =
+      null;
+
+
+    propertyButton.hidden =
+      true;
+
+
+    propertyButton.disabled =
+      false;
+
+
+    if (
+      !space ||
+      !space.property
+    ) {
+
+      return;
+
+    }
+
+
+    const progress =
+      getGameProgress();
+
+
+    const key =
+      getPropertyKey(space);
+
+
+    const owned =
+      progress.properties[key];
+
+
+    if (owned) {
+
+      boardMessage.innerHTML += `
+
+        <div class="property-owned">
+
+          🏠 You own
+          <strong>
+            ${space.label}
+          </strong>
+
+        </div>
+
+      `;
+
+
+      return;
+
+    }
+
+
+    activeProperty =
+      space;
+
+
+    const price =
+      space.property.price;
+
+
+    propertyButton.hidden =
+      false;
+
+
+    if (
+      progress.cash < price
+    ) {
+
+      propertyButton.disabled =
+        true;
+
+
+      propertyButton.textContent =
+        "Need $" +
+        price +
+        " to buy " +
+        space.label;
+
+    }
+
+    else {
+
+      propertyButton.textContent =
+        "🏙️ Buy " +
+        space.label +
+        " for $" +
+        price;
+
+    }
+
+  }
+
+
+
+  /* =====================================================
+     BUY PROPERTY
+  ====================================================== */
+
+  propertyButton.addEventListener(
+    "click",
+    function () {
+
+      if (!activeProperty) {
+
+        return;
+
+      }
+
+
+      const progress =
+        getGameProgress();
+
+
+      const key =
+        getPropertyKey(
+          activeProperty
+        );
+
+
+      if (
+        progress.properties[key]
+      ) {
+
+        renderPropertyAction(
+          activeProperty
+        );
+
+        return;
+
+      }
+
+
+      const price =
+        activeProperty.property.price;
+
+
+      if (
+        progress.cash < price
+      ) {
+
+        renderPropertyAction(
+          activeProperty
+        );
+
+        return;
+
+      }
+
+
+      progress.cash -=
+        price;
+
+
+      progress.properties[key] = {
+
+        name:
+          activeProperty.label,
+
+        island:
+          config.id,
+
+        price:
+          price,
+
+        rent:
+          activeProperty.property.rent || 0
+
+      };
+
+
+      saveGameProgress(
+        progress
+      );
+
+
+      renderWallet();
+
+
+      boardMessage.innerHTML = `
+
+        🏙️
+
+        <strong>
+          ${activeProperty.label}
+          purchased!
+        </strong>
+
+        <br>
+
+        You paid $${price}.
+
+      `;
+
+
+      renderPropertyAction(
+        activeProperty
+      );
+
+    }
+  );
+
+
+  renderWallet();
 
 
 
@@ -1046,6 +1412,54 @@ function loadIslandBoard(config) {
           :
         ""
       );
+         /* =================================================
+       MONEY
+    ================================================= */
+
+    if (
+      space.effect &&
+      Number.isFinite(
+        space.effect.money
+      )
+    ) {
+
+      const progress =
+        getGameProgress();
+
+
+      progress.cash +=
+        space.effect.money;
+
+
+      saveGameProgress(
+        progress
+      );
+
+
+      renderWallet();
+
+
+      const amount =
+        space.effect.money;
+
+
+      boardMessage.innerHTML +=
+
+        "<br><strong>" +
+
+        (
+          amount > 0
+            ?
+          "+$" + amount
+            :
+          "-$" + Math.abs(amount)
+        )
+
+        +
+
+        "</strong>";
+
+    }
 
 
 
@@ -1110,7 +1524,11 @@ function loadIslandBoard(config) {
       saveBoard();
 
     }
+    /* PROPERTY */
 
+    renderPropertyAction(
+      space
+    );
 
 
     /* FINISH */
