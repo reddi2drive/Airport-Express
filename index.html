@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Airport Express</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+  <div class="brand">
+
+    <div class="brand-plane">
+      ✈
+    </div>
+
+    <div>
+      Airport Express
+      <small>ONLINE ADVENTURE GAME</small>
+    </div>
+
+  </div>
+
+  <div class="top-actions">
+
+    <div class="passport-counter">
+      Passport:
+      <span id="stampCount">
+        0 / 6
+      </span>
+    </div>
+
+    <button
+      class="reset-button"
+      onclick="resetGame()"
+    >
+      Start Again
+    </button>
+
+  </div>
+
+</header>
+
+
+<main class="page">
+
+
+  <!-- =========================================
+       AIRPORT HERO
+  ========================================== -->
+
+  <section class="airport-hero">
+
+    <div class="airport-content">
+
+      <div class="eyebrow">
+        AIRPORT EXPRESS
+      </div>
+
+      <h1>
+        Welcome to the Airport
+      </h1>
+
+      <p>
+        The Airport is your main hub.
+        Choose a destination, complete the adventure,
+        collect its passport stamp and then return here
+        before travelling somewhere new.
+      </p>
+
+    </div>
+
+
+    <div class="passport-progress">
+
+      <div class="progress-heading">
+
+        <span>
+          Your Passport
+        </span>
+
+        <strong id="stampCount2">
+          0 / 6
+        </strong>
+
+      </div>
+
+
+      <div class="progress-track">
+
+        <div
+          class="progress-fill"
+          id="progressFill"
+        ></div>
+
+      </div>
+
+
+      <div class="mini-stamps">
+
+        <div
+          class="mini-stamp"
+          data-stamp="cashline"
+        >
+          🏙️
+        </div>
+
+        <div
+          class="mini-stamp"
+          data-stamp="hopes"
+        >
+          🏔️
+        </div>
+
+        <div
+          class="mini-stamp"
+          data-stamp="wildheart"
+        >
+          🌿
+        </div>
+
+        <div
+          class="mini-stamp"
+          data-stamp="amethyst"
+        >
+          💎
+        </div>
+
+        <div
+          class="mini-stamp"
+          data-stamp="coral"
+        >
+          🪸
+        </div>
+
+        <div
+          class="mini-stamp"
+          data-stamp="lagoon"
+        >
+          🌴
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       DEPARTURE BOARD
+  ========================================== -->
+
+  <section class="destination-section">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow dark">
+          DEPARTURE BOARD
+        </span>
+
+        <h2>
+          Choose your destination
+        </h2>
+
+        <p>
+          Every destination has its own adventure.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="destination-grid">
+
+
+      <!-- CASHLINE CITY -->
+
+      <a
+        href="locations/cashline-city.html"
+        class="destination cashline"
+        data-destination="cashline"
+      >
+
+        <div class="destination-icon">
+          🏙️
+        </div>
+
+        <div class="destination-status">
+          VISIT
+        </div>
+
+        <div class="destination-content">
+
+          <h3>
+            Cashline City
+          </h3>
+
+          <p>
+            Bright lights, shopping streets,
+            money challenges and city adventures.
+          </p>
+
+          <span class="travel-button">
+            Fly there →
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- HOPES PEAK -->
+
+      <a
+        href="locations/hopes-peak.html"
+        class="destination hopes"
+        data-destination="hopes"
+      >
+
+        <div class="destination-icon">
+          🏔️
+        </div>
+
+        <div class="destination-status">
+          VISIT
+        </div>
+
+        <div class="destination-content">
+
+          <h3>
+            Hope's Peak Mountain
+          </h3>
+
+          <p>
+            Snowy mountains, ski lifts,
+            storms and the journey to the summit.
+          </p>
+
+          <span class="travel-button">
+            Fly there →
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- WILD HEART -->
+
+      <a
+        href="locations/wild-heart-rainforest.html"
+        class="destination wildheart"
+        data-destination="wildheart"
+      >
+
+        <div class="destination-icon">
+          🌿
+        </div>
+
+        <div class="destination-status">
+          VISIT
+        </div>
+
+        <div class="destination-content">
+
+          <h3>
+            Wild Heart Rain Forest
+          </h3>
+
+          <p>
+            Swing through vines,
+            discover wildlife and survive the jungle.
+          </p>
+
+          <span class="travel-button">
+            Fly there →
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- AMETHYST -->
+
+      <a
+        href="locations/amethyst-hollows.html"
+        class="destination amethyst"
+        data-destination="amethyst"
+      >
+
+        <div class="destination-icon">
+          💎
+        </div>
+
+        <div class="destination-status">
+          VISIT
+        </div>
+
+        <div class="destination-content">
+
+          <h3>
+            Amethyst Hollows
+          </h3>
+
+          <p>
+            Explore glowing caves,
+            hidden crystals and mysterious portals.
+          </p>
+
+          <span class="travel-button">
+            Fly there →
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- CORAL COVE -->
+
+      <a
+        href="locations/coral-cove.html"
+        class="destination coral"
+        data-destination="coral"
+      >
+
+        <div class="destination-icon">
+          🪸
+        </div>
+
+        <div class="destination-status">
+          VISIT
+        </div>
+
+        <div class="destination-content">
+
+          <h3>
+            Coral Cove
+          </h3>
+
+          <p>
+            Explore colourful reefs,
+            hidden beaches and secret coves.
+          </p>
+
+          <span class="travel-button">
+            Fly there →
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- TROPICAL LAGOON -->
+
+      <a
+        href="locations/tropical-lagoon.html"
+        class="destination lagoon"
+        data-destination="lagoon"
+      >
+
+        <div class="destination-icon">
+          🌴
+        </div>
+
+        <div class="destination-status">
+          VISIT
+        </div>
+
+        <div class="destination-content">
+
+          <h3>
+            Tropical Lagoon
+          </h3>
+
+          <p>
+            Warm water, palm trees,
+            dolphins and tropical adventures.
+          </p>
+
+          <span class="travel-button">
+            Fly there →
+          </span>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       PASSPORT
+  ========================================== -->
+
+  <section class="passport-section">
+
+    <span class="eyebrow dark">
+      YOUR PASSPORT
+    </span>
+
+    <h2>
+      Passport Stamps
+    </h2>
+
+    <p>
+      Complete a destination to unlock its stamp.
+    </p>
+
+
+    <div class="passport-grid">
+
+
+      <div
+        class="passport-stamp"
+        data-passport="cashline"
+      >
+
+        <div class="stamp-icon">
+          🏙️
+        </div>
+
+        <strong>
+          Cashline City
+        </strong>
+
+      </div>
+
+
+      <div
+        class="passport-stamp"
+        data-passport="hopes"
+      >
+
+        <div class="stamp-icon">
+          🏔️
+        </div>
+
+        <strong>
+          Hope's Peak
+        </strong>
+
+      </div>
+
+
+      <div
+        class="passport-stamp"
+        data-passport="wildheart"
+      >
+
+        <div class="stamp-icon">
+          🌿
+        </div>
+
+        <strong>
+          Wild Heart
+        </strong>
+
+      </div>
+
+
+      <div
+        class="passport-stamp"
+        data-passport="amethyst"
+      >
+
+        <div class="stamp-icon">
+          💎
+        </div>
+
+        <strong>
+          Amethyst Hollows
+        </strong>
+
+      </div>
+
+
+      <div
+        class="passport-stamp"
+        data-passport="coral"
+      >
+
+        <div class="stamp-icon">
+          🪸
+        </div>
+
+        <strong>
+          Coral Cove
+        </strong>
+
+      </div>
+
+
+      <div
+        class="passport-stamp"
+        data-passport="lagoon"
+      >
+
+        <div class="stamp-icon">
+          🌴
+        </div>
+
+        <strong>
+          Tropical Lagoon
+        </strong>
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      class="final-message"
+      id="finalMessage"
+    >
+      Collect all six passport stamps!
+    </div>
+
+  </section>
+
+
+</main>
+
+
+<script src="game.js"></script>
+
+<script>
+  loadAirport();
+</script>
+
+</body>
+</html>
