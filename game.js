@@ -767,24 +767,113 @@ function loadIslandBoard(config) {
 
 
   /* =====================================================
-     BOARD PATH
-     7 x 7 board
-     24 spaces around outside
-  ====================================================== */
+   BOARD PATH
+   Supports different board sizes
+====================================================== */
 
-  const pathPositions = [];
+const boardSize =
+  Number.isInteger(config.boardSize) &&
+  config.boardSize >= 4
+    ?
+  config.boardSize
+    :
+  7;
 
 
-  /* TOP */
+/* Set visual grid size */
 
-  for (let col = 1; col <= 7; col++) {
+board.style.gridTemplateColumns =
+  `repeat(${boardSize}, 1fr)`;
 
-    pathPositions.push({
-      row: 1,
-      col: col
-    });
+board.style.gridTemplateRows =
+  `repeat(${boardSize}, 1fr)`;
 
-  }
+
+const pathPositions = [];
+
+
+/* TOP */
+
+for (
+  let col = 1;
+  col <= boardSize;
+  col++
+) {
+
+  pathPositions.push({
+
+    row:
+      1,
+
+    col:
+      col
+
+  });
+
+}
+
+
+/* RIGHT */
+
+for (
+  let row = 2;
+  row <= boardSize;
+  row++
+) {
+
+  pathPositions.push({
+
+    row:
+      row,
+
+    col:
+      boardSize
+
+  });
+
+}
+
+
+/* BOTTOM */
+
+for (
+  let col = boardSize - 1;
+  col >= 1;
+  col--
+) {
+
+  pathPositions.push({
+
+    row:
+      boardSize,
+
+    col:
+      col
+
+  });
+
+}
+
+
+/* LEFT */
+
+for (
+  let row = boardSize - 1;
+  row >= 2;
+  row--
+) {
+
+  pathPositions.push({
+
+    row:
+      row,
+
+    col:
+      1
+
+  });
+
+}
 
 
   /* RIGHT */
@@ -1203,6 +1292,12 @@ function renderPropertyAction(
 
   boardCentre.className =
     "board-centre";
+
+   boardCentre.style.gridColumn =
+  `2 / ${boardSize}`;
+
+boardCentre.style.gridRow =
+  `2 / ${boardSize}`;
 
 
   boardCentre.innerHTML = `
